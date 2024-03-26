@@ -1,0 +1,53 @@
+.page-header {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+
+  }
+  
+  .logo {
+    margin: 20px;
+    margin-right: auto;
+margin-top: -10px;
+  }
+  
+  .head {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .navbar {
+    display: inline-block;
+  }
+  
+  .navbar a {
+    margin: 0 30px;
+    font-size: 21px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.2s;
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+  }
+  
+  .navbar a:hover,
+  .navbar a:active {
+    color: #BC6FF1;
+  }
+
+  .logo-img{
+    height: 100px;
+    width: 100px;
+  }
+.acc{
+float: right;
+margin-right: 22px;
+margin-top: -20px;
+}
