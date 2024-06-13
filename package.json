@@ -1,12 +1,12 @@
 {
-  "homepage": "https://github.com/SohamV8/Send-Note.git",
+  "homepage": "https://SohamV8.github.io/Send-Note",
   "name": "sendnote",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build && ls dist",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "start": "vite",
     "build": "vite build",
@@ -21,7 +21,7 @@
     "locomotive-scroll": "^3.5.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-pdf": "^7.7.1",
+    "react-pdf": "^9.0.0",
     "react-router-dom": "^5.3.4"
   },
   "devDependencies": {
