@@ -1,14 +1,11 @@
 import React from 'react'
-import "../App.css";
 
-function notes() {
+function Notes() {
   return (
     <div>
-
-
-
+      
     </div>
   )
 }
 
-export default notes
+export default Notes
