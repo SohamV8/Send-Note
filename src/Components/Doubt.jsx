@@ -72,7 +72,6 @@ function Doubt() {
 
   return (
 <>
-    <Header />
 
     <div className="chat-container">
       <div className="chat-messages" id="chat-messages">

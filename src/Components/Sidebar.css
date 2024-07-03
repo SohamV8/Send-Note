@@ -33,7 +33,7 @@
   .sidebar-nav ul li {
     font-family: 'Poppins', sans-serif;
     font-weight: lighter; /* Light font for submenu items */
-    background-color: #23313f; /* Background color for submenus */
+    background-color: #3c3c3c; /* Background color for submenus */
   }
   
   .sidebar-nav li a {
@@ -46,23 +46,9 @@
   }
   
   .sidebar-nav li a:hover {
-    color: #1abc9c; /* Hover color */
+    color: #892cdc; /* Hover color */
   }
-  
-  /* Arrow icon styling */
-  .sidebar-nav li a i {
-    width: 10px; /* Smaller arrow width */
-    height: 10px; /* Smaller arrow height */
-    display: inline-block;
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    border-left: 2px solid #fff; /* White arrow border */
-    border-bottom: 2px solid #fff; /* White arrow border */
-    transition: transform 0.3s ease-in-out;
-  }
-  
+    
   .sidebar-nav li a i {
     width: 8px; /* Smaller arrow width */
     height: 8px; /* Smaller arrow height */
