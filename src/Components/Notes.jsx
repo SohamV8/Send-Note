@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { Fragment } from "react";
+import Sidebar from "./Sidebar";
 
 function Notes() {
   return (
-    <div>
-      
-    </div>
-  )
+    <Fragment>
+      <Sidebar />
+    </Fragment>
+  );
 }
 
-export default Notes
+export default Notes;

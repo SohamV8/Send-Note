@@ -1,0 +1,35 @@
+.app {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  hr {
+    margin: 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .menu-item, .submenu-item {
+    color: #aeb2b7;
+    text-decoration: none;
+    display: block;
+    padding: 10px 20px;
+    font-size: 14px;
+    outline: 0;
+    transition: all 200ms ease-in;
+  }
+  
+  .menu-item:hover, .submenu-item:hover {
+    color: #1abc9c;
+  }
+  
+  .sidebar {
+    width: 240px;
+    background: #293949;
+    transition: all .3s ease-in-out;
+  }
+  
+  .sidebar.collapsed {
+    width: 80px;
+  }
+  
