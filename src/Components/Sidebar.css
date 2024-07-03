@@ -41,7 +41,7 @@
     text-decoration: none;
     display: block;
     padding: 18px 25px; /* Adjust padding as needed */
-    font-size: 12px;
+    font-size: 16px;
     position: relative;
   }
   
@@ -51,33 +51,42 @@
   
   /* Arrow icon styling */
   .sidebar-nav li a i {
-    width: 20px;
+    width: 10px; /* Smaller arrow width */
+    height: 10px; /* Smaller arrow height */
     display: inline-block;
-    text-align: center;
     position: absolute;
-    right: 25px;
+    right: 20px;
     top: 50%;
     transform: translateY(-50%);
-  }
-  
-  /* Arrow icon styles */
-  .arrow {
-    display: inline-block;
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid #aeb2b7; /* Arrow color */
+    border-left: 2px solid #fff; /* White arrow border */
+    border-bottom: 2px solid #fff; /* White arrow border */
     transition: transform 0.3s ease-in-out;
   }
   
-  /* Arrow pointing down */
-  .arrow.down {
-    transform: translateY(-50%) rotate(180deg);
+  .sidebar-nav li a i {
+    width: 8px; /* Smaller arrow width */
+    height: 8px; /* Smaller arrow height */
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%) rotate(315deg); /* Initial rotation for arrow */
+    border-left: 2px solid #fff; /* White arrow border */
+    border-bottom: 2px solid #fff; /* White arrow border */
+    transition: transform 0.3s ease-in-out;
   }
   
-  /* Collapsed menu items */
-  .sidebar-nav .collapsed {
+  /* Arrow icon styles */
+  .arrow.down {
+    transform: translateY(-50%) rotate(225deg); /* Rotate arrow for down state */
+  }
+  
+  /* Expanded submenu */
+  .submenu.expanded {
+    display: block;
+  }
+  
+  .submenu {
     display: none;
   }
   
