@@ -16,7 +16,7 @@ import {
   Menu,
   MenuItem
 } from "react-pro-sidebar";
-import "react-pro-sidebar/dist/css/styles.css";
+import "react-pro-sidebar/"; // Correct import path if styles are present
 import "./Sidebar.css";
 
 function Sidebars() {

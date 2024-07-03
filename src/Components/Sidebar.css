@@ -25,11 +25,28 @@
   
   .sidebar {
     width: 240px;
-    background: #293949;
-    transition: all .3s ease-in-out;
+    background: #252525;
+    transition: all 0.3s ease-in-out;
   }
   
   .sidebar.collapsed {
     width: 80px;
+  }
+  
+  .sidebar .menu-item, .sidebar .submenu-item {
+    color: #aeb2b7;
+  }
+  
+  .sidebar .menu-item:hover, .sidebar .submenu-item:hover {
+    color: #1abc9c;
+  }
+  
+  .sidebar hr {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .sidebar .menu-item.active, .sidebar .submenu-item.active {
+    background-color: #1abc9c;
+    color: #ffffff;
   }
   
