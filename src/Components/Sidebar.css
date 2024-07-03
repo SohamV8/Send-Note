@@ -1,52 +1,99 @@
-.app {
-    display: flex;
-    height: 100vh;
-    overflow: hidden;
+.sidebar {
+    margin-top: 140px;
+    width: 240px;
+    height: 100%;
+    background-color: #252525;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+    transition: width 0.3s ease-in-out;
+    z-index: 100;
   }
   
-  hr {
+  /* Styling for menu items and submenus */
+  .sidebar-nav {
+    list-style-type: none;
+    padding: 0;
     margin: 0;
-    border: 1px solid rgba(255, 255, 255, 0.1);
   }
   
-  .menu-item, .submenu-item {
+  .sidebar-nav li {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Line below each item */
+  }
+  
+  .sidebar-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar-nav ul li {
+    font-family: 'Poppins', sans-serif;
+    font-weight: lighter; /* Light font for submenu items */
+    background-color: #23313f; /* Background color for submenus */
+  }
+  
+  .sidebar-nav li a {
     color: #aeb2b7;
     text-decoration: none;
     display: block;
-    padding: 10px 20px;
-    font-size: 14px;
-    outline: 0;
-    transition: all 200ms ease-in;
+    padding: 18px 25px; /* Adjust padding as needed */
+    font-size: 12px;
+    position: relative;
   }
   
-  .menu-item:hover, .submenu-item:hover {
-    color: #1abc9c;
+  .sidebar-nav li a:hover {
+    color: #1abc9c; /* Hover color */
   }
   
-  .sidebar {
-    width: 240px;
-    background: #252525;
-    transition: all 0.3s ease-in-out;
+  /* Arrow icon styling */
+  .sidebar-nav li a i {
+    width: 20px;
+    display: inline-block;
+    text-align: center;
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
   }
   
-  .sidebar.collapsed {
-    width: 80px;
+  /* Arrow icon styles */
+  .arrow {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #aeb2b7; /* Arrow color */
+    transition: transform 0.3s ease-in-out;
   }
   
-  .sidebar .menu-item, .sidebar .submenu-item {
-    color: #aeb2b7;
+  /* Arrow pointing down */
+  .arrow.down {
+    transform: translateY(-50%) rotate(180deg);
   }
   
-  .sidebar .menu-item:hover, .sidebar .submenu-item:hover {
-    color: #1abc9c;
+  /* Collapsed menu items */
+  .sidebar-nav .collapsed {
+    display: none;
   }
   
-  .sidebar hr {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  
-  .sidebar .menu-item.active, .sidebar .submenu-item.active {
-    background-color: #1abc9c;
-    color: #ffffff;
+  /* Media query for responsive design */
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 60px; /* Collapse sidebar width on smaller screens */
+    }
+    .sidebar.toggled {
+      width: 240px; /* Expanded sidebar width when toggled */
+    }
+    .sidebar-nav .arrow {
+      display: none; /* Hide arrows on smaller screens */
+    }
+    .sidebar.toggled .sidebar-nav ul {
+      display: none; /* Hide submenus when collapsed */
+    }
   }
   

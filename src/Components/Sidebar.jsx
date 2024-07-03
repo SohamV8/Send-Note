@@ -1,69 +1,75 @@
-import React, { useState } from "react";
-import {
-  RiHome4Line,
-  RiTeamLine,
-  RiCalendar2Line,
-  RiFolder2Line,
-  RiUserFollowLine,
-  RiPlantLine,
-  RiStackLine,
-  RiUserUnfollowLine
-} from "react-icons/ri";
-import { FiChevronsLeft, FiChevronsRight } from "react-icons/fi";
-import {
-  Sidebar,
-  SubMenu,
-  Menu,
-  MenuItem
-} from "react-pro-sidebar";
-import "react-pro-sidebar/"; // Correct import path if styles are present
-import "./Sidebar.css";
+import React, { useState } from 'react';
+import './Sidebar.css'; // Import your custom styles here
 
-function Sidebars() {
+const Sidebar = () => {
   const [collapsed, setCollapsed] = useState(false);
   const [toggled, setToggled] = useState(false);
 
-  const handleCollapsedChange = () => {
+  const handleToggleSidebar = () => {
+    setToggled(!toggled);
     setCollapsed(!collapsed);
   };
 
-  const handleToggleSidebar = (value) => {
-    setToggled(value);
-  };
-
   return (
-    <div className={`app ${toggled ? "toggled" : ""}`} style={{ height: "100%", position: "absolute" }}>
-      <Sidebar
-        collapsed={collapsed}
-        toggled={toggled}
-        onToggle={handleToggleSidebar}
-        onCollapse={handleCollapsedChange}
-      >
-        <Menu iconShape="circle">
-          {collapsed ? (
-            <MenuItem icon={<FiChevronsRight />} onClick={handleCollapsedChange}></MenuItem>
-          ) : (
-            <MenuItem suffix={<FiChevronsLeft />} onClick={handleCollapsedChange}>
-              <div style={{ padding: "9px", fontWeight: "bold", fontSize: 14, letterSpacing: "1px" }}>
-                YOUR LOGO!..
-              </div>
-            </MenuItem>
-          )}
-          <hr />
-          <MenuItem icon={<RiHome4Line />}>Dashboard</MenuItem>
-          <SubMenu defaultOpen title="Professors" icon={<RiTeamLine />}>
-            <MenuItem icon={<RiUserFollowLine />}>Active</MenuItem>
-            <MenuItem icon={<RiUserUnfollowLine />}>Ex Professors</MenuItem>
-            <MenuItem icon={<RiCalendar2Line />}>Probation Period</MenuItem>
-          </SubMenu>
-          <SubMenu defaultOpen title="Records" icon={<RiFolder2Line />}>
-            <MenuItem icon={<RiStackLine />}>Senior Students</MenuItem>
-            <MenuItem icon={<RiPlantLine />}>Junior Students</MenuItem>
-          </SubMenu>
-        </Menu>
-      </Sidebar>
+    <div className={`sidebar ${toggled ? 'toggled' : ''}`}>
+      <ul className="sidebar-nav">
+
+
+        <li className="sub-menu">
+          <a href="#" onClick={handleToggleSidebar}>
+            <i className="fa fa-graduation-cap"></i>
+            <span>1st Year</span>
+            <i className={`arrow ${collapsed ? 'down' : 'right'}`}></i> {/* Arrow icon */}
+          </a>
+          <ul className={collapsed ? 'collapsed' : ''}>
+            <li><a href="#">Engineering Graphics Design</a></li>
+            <li><a href="#">Physics</a></li>
+            <li><a href="#">Chemistry</a></li>
+          </ul>
+        </li>
+        <li className="sub-menu">
+          <a href="#" onClick={handleToggleSidebar}>
+            <i className="fa fa-graduation-cap"></i>
+            <span>2nd Year</span>
+            <i className={`arrow ${collapsed ? 'down' : 'right'}`}></i> {/* Arrow icon */}
+          </a>
+          <ul className={collapsed ? 'collapsed' : ''}>
+            <li><a href="#">EWA</a></li>
+            <li><a href="#">ADA</a></li>
+            <li><a href="#">DBMS</a></li>
+            <li><a href="#">CS</a></li>
+          </ul>
+        </li>
+        
+        <li className="sub-menu">
+          <a href="#" onClick={handleToggleSidebar}>
+            <i className="fa fa-graduation-cap"></i>
+            <span>3rd Year</span>
+            <i className={`arrow ${collapsed ? 'down' : 'right'}`}></i> {/* Arrow icon */}
+          </a>
+          <ul className={collapsed ? 'collapsed' : ''}>
+            <li><a href="#">Engineering Graphics Design</a></li>
+            <li><a href="#">Physics</a></li>
+            <li><a href="#">Chemistry</a></li>
+          </ul>
+        </li>
+
+        <li className="sub-menu">
+          <a href="#" onClick={handleToggleSidebar}>
+            <i className="fa fa-graduation-cap"></i>
+            <span>4th Year</span>
+            <i className={`arrow ${collapsed ? 'down' : 'right'}`}></i> {/* Arrow icon */}
+          </a>
+          <ul className={collapsed ? 'collapsed' : ''}>
+            <li><a href="#">Engineering Graphics Design</a></li>
+            <li><a href="#">Physics</a></li>
+            <li><a href="#">Chemistry</a></li>
+          </ul>
+        </li>
+
+      </ul>
     </div>
   );
-}
+};
 
-export default Sidebars;
+export default Sidebar;

@@ -1,11 +1,11 @@
-import React, { Fragment } from "react";
+import React from "react";
 import Sidebar from "./Sidebar";
 
 function Notes() {
   return (
-    <Fragment>
+
       <Sidebar />
-    </Fragment>
+
   );
 }
 

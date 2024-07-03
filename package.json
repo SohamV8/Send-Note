@@ -23,7 +23,7 @@
     "react-dom": "^18.2.0",
     "react-icons": "^5.2.1",
     "react-pdf": "^9.0.0",
-    "react-pro-sidebar": "^1.1.0",
+    "react-pro-sidebar": "^0.7.1",
     "react-router-dom": "^5.3.4"
   },
   "devDependencies": {
