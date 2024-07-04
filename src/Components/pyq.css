@@ -4,6 +4,7 @@
             flex-grow: 1;
             position: relative;
             top: 120px;
+            margin-top: -80px;
         }
 
         iframe {
