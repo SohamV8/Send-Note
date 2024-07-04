@@ -5,6 +5,7 @@
             position: relative;
             top: 120px;
             margin-top: -80px;
+            z-index: 100;
         }
 
         iframe {

@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './doubt.css';
-import Header from './Header'; 
+import './doubt.css'; 
 import "../App.css";
 import sendIcon from '../assets/send.png';
-
 
 function Doubt() {
   const [chatMessages, setChatMessages] = useState([]);
@@ -48,7 +46,7 @@ function Doubt() {
         {
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'sk-VfeYd5FJs3zD9pDWHrH1T3BlbkFJ2Jxb0tn82a8YPEuogqd', // Replace with your actual OpenAI API key
+            'Authorization': '#', // Replace with your actual OpenAI API key
           },
         }
       );
