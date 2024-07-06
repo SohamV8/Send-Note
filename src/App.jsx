@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from './Components/Header';
-import Home from './Components/Home';
-import Notes from './Components/Notes';
-import Doubt from './Components/Doubt';
-import PYQ from './Components/PYQ';
+import Home from './Pages/Home';
+import Notes from './Pages/Notes';
+import Doubt from './Pages/Doubt';
+import PYQ from './Pages/PYQ';
 import './App.css';
 import 'font-awesome/css/font-awesome.min.css';
 

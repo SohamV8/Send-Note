@@ -1,9 +1,0 @@
-.right-cont{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    justify-content: space-around;
-    align-items: flex-start;
-    margin-left: 300px;
-}

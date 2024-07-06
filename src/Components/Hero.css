@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+
+.Homepagetry {
+  position: relative;
+  display: flex;
+  justify-content: center; /* Centers items horizontally */
+  align-items: center; /* Centers items vertically */
+  height: 100vh; /* Adjusted to cover the full viewport height */
+  width: 100%;
+  overflow: hidden; /* Ensures the background animation does not cause scroll bars */
+}
+
+.hero-img {
+  width: 400px;
+  height: auto;
+}
+
+.Homepagetry .animation1,
+.Homepagetry .animation2,
+.Homepagetry .animation3,
+.Homepagetry .animation4,
+.Homepagetry .animation5,
+.Homepagetry .animation6,
+.Homepagetry .animation7,
+.Homepagetry .animation8,
+.Homepagetry .animation9,
+.Homepagetry .animation10,
+.Homepagetry .animation11,
+.Homepagetry .animation12 {
+  position: absolute; /* Ensures animations are positioned relative to the parent */
+  transform: translate(-50%, -50%); /* Centers animations precisely */
+  z-index: 10;
+}
+
+.Homepagetry .animation1 {
+  top: 20%; /* Positioning from the top */
+  left: 15%; /* Positioning from the left */
+  width: 200px; /* Adjust width as needed */
+}
+
+.Homepagetry .animation2 {
+  top: 10%; /* Positioning from the top */
+  left: 70%; /* Positioning from the left */
+  width: 500px; /* Adjust width as needed */
+}
+
+.Homepagetry .animation3 {
+  top: 60%; /* Positioning from the top */
+  left: 60%; /* Positioning from the left */
+  width: 250px; /* Adjust width as needed */
+}
+
+.Homepagetry .animation4 {
+  top: 55%; /* Positioning from the top */
+  left: 85%; /* Positioning from the left */
+  width: 220px; /* Adjust width as needed */
+}
+
+.Homepagetry .animation5 {
+  top: 0%; /* Positioning from the top */
+  left: 50%; /* Positioning from the left */
+  width: 175px; /* Adjust width as needed */
+}
+
+.Homepagetry .animation6 {
+  top: 65%; /* Positioning from the top */
+  left: 30%; /* Positioning from the left */
+  width: 220px; /* Adjust width as needed */
+}
+
+.Homepagetry .animation7 {
+  top: 60%; /* Positioning from the top */
+  left: 10%; /* Positioning from the left */
+  width: 200px; /* Adjust width as needed */
+}
+
+.Homepagetry .animation8 {
+  top: 10%; /* Positioning from the top */
+  left: -3%; /* Positioning from the left */
+  width: 200px; /* Adjust width as needed */
+}
+
+.Homepagetry .animation9 {
+  top: 20%; /* Positioning from the top */
+  left: 80%; /* Positioning from the left */
+  width: 200px; /* Adjust width as needed */
+}
+
+.Homepagetry .animation10 {
+  top: 2%; /* Positioning from the top */
+  left: 35%; /* Positioning from the left */
+  width: 10px; /* Adjust width as needed */
+}
+
+.Homepagetry .animation11 {
+  top: 5%; /* Positioning from the top */
+  left: 92%; /* Positioning from the left */
+  width: 200px; /* Adjust width as needed */
+}
+
+.Homepagetry .animation12 {
+  top: 50%; /* Positioning from the top */
+  left: -3%; /* Positioning from the left */
+  width: 200px; /* Adjust width as needed */
+}

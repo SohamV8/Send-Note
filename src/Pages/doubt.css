@@ -1,0 +1,50 @@
+.chat-container {
+  margin-left: 30px;
+  margin-bottom: 10px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.chat-messages {
+  height: 500px;
+  overflow-y: scroll;
+  padding: 10px;
+}
+
+.chat-input {
+  width: calc(100% - 150px);
+  padding: 10px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  background-color: transparent;
+  border-radius: 15px;
+  font-family: 'victor mono', monospace; /* Ensure the correct font name */
+  font-weight: 700;
+}
+
+.send-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 6px;
+  transition: background-color 0.3s ease; /* Add a smooth transition */
+}
+
+.send-button:hover {
+  background-color: #ddd; /* Change color on hover */
+}
+
+.chat-message {
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #000000;
+  color: wheat;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
