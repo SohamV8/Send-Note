@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Autour+One&display=swap');
+
+.backtorn {
+  font-family: "Autour One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0b1020;
+}
+
+#background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+#blob {
+  position: absolute;
+  background-color: white;
+  width: 36vmax;
+  height: 36vmax;
+  border-radius: 50%;
+  opacity: 0.8;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(to right, #785599, #9e8548);
+}
+
+#blur {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backdrop-filter: blur(20px);
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 2000px;
+}
+
+#video-container {
+  width: 580px;
+  height: 520px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 40px;
+  transform-style: preserve-3d;
+  transform: scale(0);
+}
+
+#video-container > * {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+}
+
+#title {
+  position: absolute;
+  top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fafaf5;
+  font-size: 80px;
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: -5px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  animation: titleFadeIn 1s ease forwards 1s;
+}
+
+.word {
+  position: relative;
+  display: inline-block;
+}
+
+.word:nth-child(2) {
+  margin-left: -50px;
+}
+
+.word:nth-child(3) {
+  margin-left: 30px;
+}
+
+.char {
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes titleFadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+#replay {
+  margin-top: 30px;
+  padding: 15px 30px;
+  background: linear-gradient(to right, var(--purple), var(--turquois), var(--yellow));
+  border-radius: 30px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 18px;
+  text-transform: uppercase;
+  transform: translateX(300px) scale(0);
+  animation: slideIn 1s forwards 3s;
+}
+
+@keyframes slideIn {
+  to {
+    transform: translateX(0) scale(1);
+  }
+}
