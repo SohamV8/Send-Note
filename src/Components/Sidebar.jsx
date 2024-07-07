@@ -18,7 +18,6 @@ const Sidebar = () => {
       <ul className="sidebar-nav">
         <li className="sub-menu">
           <a href="#" onClick={() => handleSubMenuToggle(1)}>
-            <i className="fa fa-graduation-cap"></i>
             <span>1st Year</span>
             <i className={`arrow ${activeMenu === 1 ? 'down' : 'right'}`}></i>
           </a>
@@ -30,7 +29,6 @@ const Sidebar = () => {
         </li>
         <li className="sub-menu">
           <a href="#" onClick={() => handleSubMenuToggle(2)}>
-            <i className="fa fa-graduation-cap"></i>
             <span>2nd Year</span>
             <i className={`arrow ${activeMenu === 2 ? 'down' : 'right'}`}></i>
           </a>
@@ -43,7 +41,6 @@ const Sidebar = () => {
         </li>
         <li className="sub-menu">
           <a href="#" onClick={() => handleSubMenuToggle(3)}>
-            <i className="fa fa-graduation-cap"></i>
             <span>3rd Year</span>
             <i className={`arrow ${activeMenu === 3 ? 'down' : 'right'}`}></i>
           </a>
@@ -55,7 +52,6 @@ const Sidebar = () => {
         </li>
         <li className="sub-menu">
           <a href="#" onClick={() => handleSubMenuToggle(4)}>
-            <i className="fa fa-graduation-cap"></i>
             <span>4th Year</span>
             <i className={`arrow ${activeMenu === 4 ? 'down' : 'right'}`}></i>
           </a>

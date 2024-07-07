@@ -8,12 +8,14 @@ import notesImage from '../assets/3d8.png';
 import doubtImage from '../assets/3d5.png';
 import pyqImage from '../assets/3d2.png';
 import Hero from '../Components/Hero';
+import Slider from '../Components/Slider';
 
 function Home() {
   return (
     <div>
       <Hero />
 
+<Slider />
       
       {/* <div className="hero" style={{ height: '100vh', width: '100%' }}>
         <div className="hero-text left-text">

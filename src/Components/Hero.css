@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
-
+/* Ensure the SVG is positioned above the hero image */
 .Homepagetry {
   position: relative;
   display: flex;
@@ -12,7 +11,16 @@
 
 .hero-img {
   width: 400px;
+  margin-top: -20px;
   height: auto;
+  position: relative;
+  z-index: 1; /* Ensure it is below the SVG */
+}
+
+.gif-img {
+  width: 100%; /* Ensures the gif images scale properly */
+  height: auto;
+  max-width: 200px; /* Set a maximum width for the gif images */
 }
 
 .Homepagetry .animation1,
@@ -35,71 +43,91 @@
 .Homepagetry .animation1 {
   top: 20%; /* Positioning from the top */
   left: 15%; /* Positioning from the left */
-  width: 200px; /* Adjust width as needed */
 }
 
 .Homepagetry .animation2 {
   top: 10%; /* Positioning from the top */
   left: 70%; /* Positioning from the left */
-  width: 500px; /* Adjust width as needed */
 }
 
 .Homepagetry .animation3 {
   top: 60%; /* Positioning from the top */
   left: 60%; /* Positioning from the left */
-  width: 250px; /* Adjust width as needed */
 }
 
 .Homepagetry .animation4 {
   top: 55%; /* Positioning from the top */
   left: 85%; /* Positioning from the left */
-  width: 220px; /* Adjust width as needed */
 }
 
 .Homepagetry .animation5 {
   top: 0%; /* Positioning from the top */
   left: 50%; /* Positioning from the left */
-  width: 175px; /* Adjust width as needed */
 }
 
 .Homepagetry .animation6 {
   top: 65%; /* Positioning from the top */
   left: 30%; /* Positioning from the left */
-  width: 220px; /* Adjust width as needed */
 }
 
 .Homepagetry .animation7 {
   top: 60%; /* Positioning from the top */
   left: 10%; /* Positioning from the left */
-  width: 200px; /* Adjust width as needed */
 }
 
 .Homepagetry .animation8 {
   top: 10%; /* Positioning from the top */
   left: -3%; /* Positioning from the left */
-  width: 200px; /* Adjust width as needed */
 }
 
 .Homepagetry .animation9 {
   top: 20%; /* Positioning from the top */
   left: 80%; /* Positioning from the left */
-  width: 200px; /* Adjust width as needed */
 }
 
 .Homepagetry .animation10 {
   top: 2%; /* Positioning from the top */
   left: 35%; /* Positioning from the left */
-  width: 10px; /* Adjust width as needed */
 }
 
 .Homepagetry .animation11 {
   top: 5%; /* Positioning from the top */
   left: 92%; /* Positioning from the left */
-  width: 200px; /* Adjust width as needed */
 }
 
 .Homepagetry .animation12 {
   top: 50%; /* Positioning from the top */
   left: -3%; /* Positioning from the left */
-  width: 200px; /* Adjust width as needed */
+}
+
+
+svg{
+  position: relative;
+  display: flex;
+  z-index: 100;
+}
+
+#marker {
+  stroke-dasharray: 1500;
+  stroke-dashoffset: 1500;
+  animation: mark 4s ease-in-out infinite;
+
+  position: absolute;
+  z-index: 2; /* Ensure it is above the hero image */
+}
+
+@keyframes mark {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.marking{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-top: -130px;
 }
