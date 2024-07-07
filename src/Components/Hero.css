@@ -1,12 +1,11 @@
-/* Ensure the SVG is positioned above the hero image */
 .Homepagetry {
   position: relative;
   display: flex;
-  justify-content: center; /* Centers items horizontally */
-  align-items: center; /* Centers items vertically */
-  height: 100vh; /* Adjusted to cover the full viewport height */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   width: 100%;
-  overflow: hidden; /* Ensures the background animation does not cause scroll bars */
+  overflow: hidden;
 }
 
 .hero-img {
@@ -14,13 +13,13 @@
   margin-top: -20px;
   height: auto;
   position: relative;
-  z-index: 1; /* Ensure it is below the SVG */
+  z-index: 1;
 }
 
 .gif-img {
-  width: 100%; /* Ensures the gif images scale properly */
+  width: 100%;
   height: auto;
-  max-width: 200px; /* Set a maximum width for the gif images */
+  max-width: 200px;
 }
 
 .Homepagetry .animation1,
@@ -35,85 +34,81 @@
 .Homepagetry .animation10,
 .Homepagetry .animation11,
 .Homepagetry .animation12 {
-  position: absolute; /* Ensures animations are positioned relative to the parent */
-  transform: translate(-50%, -50%); /* Centers animations precisely */
+  position: absolute;
+  transform: translate(-50%, -50%);
   z-index: 10;
 }
 
 .Homepagetry .animation1 {
-  top: 20%; /* Positioning from the top */
-  left: 15%; /* Positioning from the left */
+  top: 20%;
+  left: 15%;
 }
 
 .Homepagetry .animation2 {
-  top: 10%; /* Positioning from the top */
-  left: 70%; /* Positioning from the left */
+  top: 10%;
+  left: 70%;
 }
 
 .Homepagetry .animation3 {
-  top: 60%; /* Positioning from the top */
-  left: 60%; /* Positioning from the left */
+  top: 60%;
+  left: 60%;
 }
 
 .Homepagetry .animation4 {
-  top: 55%; /* Positioning from the top */
-  left: 85%; /* Positioning from the left */
+  top: 55%;
+  left: 85%;
 }
 
 .Homepagetry .animation5 {
-  top: 0%; /* Positioning from the top */
-  left: 50%; /* Positioning from the left */
+  top: 0%;
+  left: 50%;
 }
 
 .Homepagetry .animation6 {
-  top: 65%; /* Positioning from the top */
-  left: 30%; /* Positioning from the left */
+  top: 65%;
+  left: 30%;
 }
 
 .Homepagetry .animation7 {
-  top: 60%; /* Positioning from the top */
-  left: 10%; /* Positioning from the left */
+  top: 60%;
+  left: 10%;
 }
 
 .Homepagetry .animation8 {
-  top: 10%; /* Positioning from the top */
-  left: -3%; /* Positioning from the left */
+  top: 10%;
+  left: -3%;
 }
 
 .Homepagetry .animation9 {
-  top: 20%; /* Positioning from the top */
-  left: 80%; /* Positioning from the left */
+  top: 20%;
+  left: 80%;
 }
 
 .Homepagetry .animation10 {
-  top: 2%; /* Positioning from the top */
-  left: 35%; /* Positioning from the left */
+  top: 2%;
+  left: 35%;
 }
 
 .Homepagetry .animation11 {
-  top: 5%; /* Positioning from the top */
-  left: 92%; /* Positioning from the left */
+  top: 5%;
+  left: 92%;
 }
 
 .Homepagetry .animation12 {
-  top: 50%; /* Positioning from the top */
-  left: -3%; /* Positioning from the left */
+  top: 50%;
+  left: -3%;
 }
 
-
-svg{
-  position: relative;
+svg {
+  position: absolute;
   display: flex;
-  z-index: 100;
+  z-index: 2;
 }
 
 #marker {
   stroke-dasharray: 1500;
   stroke-dashoffset: 1500;
   animation: mark 4s ease-in-out infinite;
-
-  position: absolute;
-  z-index: 2; /* Ensure it is above the hero image */
 }
 
 @keyframes mark {
@@ -122,7 +117,7 @@ svg{
   }
 }
 
-.marking{
+.marking {
   display: flex;
   align-content: center;
   justify-content: center;
@@ -130,4 +125,44 @@ svg{
   flex-wrap: wrap;
   flex-direction: column;
   margin-top: -130px;
+}
+
+.grid-background-container {
+  position: absolute;
+  opacity: 0.2;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='%23000000'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+  background-size: 16px 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .grid-background-container {
+    background-color: #0b1020;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='%23ffffff'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+  }
+}
+
+.grid-background-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  mask-image: radial-gradient(ellipse at center, transparent 20%, black);
+  pointer-events: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .grid-background-overlay {
+    background-color: black;
+  }
 }

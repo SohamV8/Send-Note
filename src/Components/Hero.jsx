@@ -60,11 +60,12 @@ const Hero = () => {
 
   return (
     <div className='Homepagetry'>
-      <div className="marking">
-      <img className='hero-img' src={FINALPNG} alt="Hero" />
-      <svg id='marker' width="600" height="221" viewBox="0 0 558 206" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M556.245 134.773C467.575 179.243 47.4196 229.474 6.27055 129.113C-25.6705 51.2095 138.718 10.9139 188.54 5.09442C260.128 -3.26732 458.683 -2.18675 472.824 69.5222C482.183 116.983 425.732 151.372 392.606 163.192C333.489 184.286 272.579 197.691 209.936 204.01" stroke="#FFC425" stroke-width="3" stroke-linecap="round"/>
-      </svg></div>
+
+      <div className="marking">      <img className='hero-img' src={FINALPNG} alt="Hero" />
+        <svg id='marker' width="600" height="221" viewBox="0 0 558 206" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M556.245 134.773C467.575 179.243 47.4196 229.474 6.27055 129.113C-25.6705 51.2095 138.718 10.9139 188.54 5.09442C260.128 -3.26732 458.683 -2.18675 472.824 69.5222C482.183 116.983 425.732 151.372 392.606 163.192C333.489 184.286 272.579 197.691 209.936 204.01" stroke="#FFC425" strokeWidth="3" strokeLinecap="round"/>
+        </svg>
+      </div>
       {gifs.map((gif, index) => (
         <GifComponent
           key={index}
@@ -74,6 +75,9 @@ const Hero = () => {
           elementsRef={elementsRef}
         />
       ))}
+      <div className="grid-background-container">
+        <div className="grid-background-overlay"></div>
+      </div>
     </div>
   );
 };

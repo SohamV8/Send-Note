@@ -36,6 +36,7 @@
   position: absolute;
   animation-timing-function: linear;
   animation-duration: 30s;
+  border-radius: 10px;
   animation-iteration-count: infinite;
 }
 
@@ -54,6 +55,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 10px;
 }
 
 .item1 {
