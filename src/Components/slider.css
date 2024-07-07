@@ -1,23 +1,11 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-* {
-  margin: 0;
-}
-
-body {
-  background-color: #030712;
-}
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Caveat:wght@400..700&family=Cedarville+Cursive&family=Homemade+Apple&display=swap');
 
 .wrapperslide {
   margin-top: 2rem;
   width: 90%;
   max-width: 1536px;
   margin-inline: auto;
-  height: 430px; /* Adjusted to match the height of the items */
+  height: 394px;
   position: relative;
   overflow: hidden;
   mask-image: linear-gradient(
@@ -43,8 +31,8 @@ body {
 
 .itemLeft,
 .itemRight {
-  width: 300px; /* Adjusted width */
-  height: 430px; /* Adjusted height */
+  width: 275px;
+  height: 394px;
   position: absolute;
   animation-timing-function: linear;
   animation-duration: 30s;
@@ -52,12 +40,12 @@ body {
 }
 
 .itemLeft {
-  left: max(calc(300px * 8), 100%);
+  left: max(calc(275px * 8), 100%);
   animation-name: scrollLeft;
 }
 
 .itemRight {
-  right: max(calc(300px * 8), calc(100% + 300px)); /* Adjusted to match the width */
+  right: max(calc(275px * 8), calc(100% + 275px));
   animation-name: scrollRight;
 }
 
@@ -98,4 +86,22 @@ body {
 
 .item8 {
   animation-delay: calc(30s / 8 * (8 - 8) * -1);
+}
+
+h1.get{
+color: white;
+font-size: 56px;
+justify-content: center;
+text-align: center;
+font-family: "Anton SC", sans-serif;
+font-weight: 400;
+font-style: normal;
+}
+
+span.hand{
+  color: yellow;
+  font-size: 48px;
+  font-family: "Homemade Apple", cursive;
+  font-weight: 500;
+  font-style: normal;
 }
