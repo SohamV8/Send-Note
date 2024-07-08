@@ -2,11 +2,15 @@
 
 
 .sliding{
-  z-index: 100;
+
   background-color:  #0b1020;
+
+  backdrop-filter: blur(8vmax);
+  -webkit-backdrop-filter: blur(8vmax);
 }
 
 .wrapperslide {
+    z-index: 100;
   margin-top: 2rem;
   width: 90%;
   max-width: 1536px;

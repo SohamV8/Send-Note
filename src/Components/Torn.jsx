@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import './Torn.css';
 import { gsap } from 'gsap';
 import { Link } from 'react-router-dom';
+import protitle from '../assets/protitle.mp4';
 
 function Torn() {
   const blobRef = useRef(null);
@@ -96,21 +97,24 @@ function Torn() {
 
   return (
     <div className="Apptorn">
+
       <section id="background-torn">
         <div id="blob" ref={blobRef}></div>
         <div id="blur"></div>
       </section>
+
       <main>
         <div id="video-container" ref={videoContainerRef}>
           <video
             poster=""
-            src=""
+            src={protitle}
             muted
             autoPlay
             loop
             playsInline
           ></video>
         </div>
+
         <div id="title-torn">
           <span className="word">
             <span className="char">N</span>
@@ -141,6 +145,7 @@ function Torn() {
             <span className="char">s</span>
           </span>
         </div>
+
         <Link to="/PYQ">
           <button id="redirect-button">
             <span className="button-bg">
