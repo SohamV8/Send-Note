@@ -3,4 +3,11 @@ img.torn{
     height: auto;
     z-index: 100;
     position: absolute;
+    margin-top: -80px;
+}
+
+.backAI{
+    background-color: black;
+    height: 100vh;
+    width: 100%;
 }

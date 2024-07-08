@@ -5,7 +5,10 @@ import './AI.css';
 function AI() {
   return (
     <div>
-            <img src={torntry} alt='' className='torn'></img>
+        <img src={torntry} alt='' className='torn'></img>
+        <div className="backAI">
+            
+    </div>
     </div>
   )
 }
