@@ -86,7 +86,7 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  transform: translate3D(300px, 0, 0);
+  transform: translate3D(-175px, 10px, 0);
   pointer-events: none;
 }
 
@@ -96,9 +96,10 @@ main {
   justify-content: center;
   align-items: center;
   color: #fafaf5;
-  font-size: 120px;
+  font-size: 140px;
   font-weight: 900;
-  line-height: 103px;
+  line-height: 133px;
+  text-shadow: 1px 2px 5px rgba(0, 0, 0, 1);
 }
 
 .word:nth-child(2) {
@@ -116,8 +117,8 @@ main {
 /* -- Button -- */
 #redirect-button {
   position: absolute;
-  left: 50%;
-  bottom: 10%;
+  left: 70%;
+  bottom: 45%;
   transform: translateX(-50%);
   height: 50px;
   width: 180px;

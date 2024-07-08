@@ -2,7 +2,7 @@
     margin-top: 140px;
     width: 240px;
     height: 100%;
-    background-color: #252525;
+    background-color:  #0b1020;
     position: fixed;
     left: 0;
     top: 0;
@@ -33,7 +33,7 @@
   .sidebar-nav ul li {
     font-family: 'Poppins', sans-serif;
     font-weight: lighter; /* Light font for submenu items */
-    background-color: #3c3c3c; /* Background color for submenus */
+    background-color: #141b30; /* Background color for submenus */
   }
   
   .sidebar-nav li a {
@@ -46,7 +46,7 @@
   }
   
   .sidebar-nav li a:hover {
-    color: #892cdc; /* Hover color */
+    color: #FFDB58; /* Hover color */
   }
     
   .sidebar-nav li a i {
