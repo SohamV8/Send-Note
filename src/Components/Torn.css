@@ -1,138 +1,221 @@
-@import url('https://fonts.googleapis.com/css2?family=Autour+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aladin&family=Mouse+Memoirs&display=swap');
 
-.backtorn {
-  font-family: "Autour One", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  overflow: hidden;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #0b1020;
+:root {
+  --yellow: #ffd074;
+  --purple: #a374ff;
+  --turquois: #15f0d1;
 }
 
-#background {
+.Apptorn {
+  width: 100%;
+  height: 100vh;
+  background: #0b1020;
+  overflow: hidden;
+  font-family: "Aladin", system-ui;
+}
+
+#background-torn {
   width: 100%;
   height: 100%;
   position: absolute;
-  z-index: -1;
+  z-index: 1;
 }
 
+/* -- Blob -- */
 #blob {
   position: absolute;
   background-color: white;
-  width: 36vmax;
   height: 36vmax;
+  aspect-ratio: 1;
+  background: linear-gradient(to right, #785599, #9e8548);
   border-radius: 50%;
   opacity: 0.8;
-  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  background: linear-gradient(to right, #785599, #9e8548);
+  top: 50%;
+  z-index: 2;
+  translate: -50% -50%;
 }
 
 #blur {
-  width: 100%;
   height: 100%;
+  width: 100%;
   position: absolute;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(8vmax);
+  -webkit-backdrop-filter: blur(8vmax);
+  z-index: 3;
 }
 
+/* -- Video, Title, & Button -- */
 main {
+  position: absolute;
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   perspective: 2000px;
+  user-select: none;
+  z-index: 4;
 }
 
+/* -- Video -- */
 #video-container {
   width: 580px;
   height: 520px;
   overflow: hidden;
   position: relative;
+  pointer-events: none;
   border-radius: 40px;
   transform-style: preserve-3d;
-  transform: scale(0);
+  scale: 0;
 }
 
 #video-container > * {
-  width: 100%;
-  height: 100%;
+  width: 115%;
+  height: 115%;
   position: absolute;
+  top: -7%;
+  left: -7%;
   object-fit: cover;
 }
 
-#title {
+/* -- Title Text -- */
+#title-torn {
   position: absolute;
-  top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  color: #fafaf5;
-  font-size: 80px;
-  font-weight: 900;
-  line-height: 1.2;
-  letter-spacing: -5px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  opacity: 0;
-  animation: titleFadeIn 1s ease forwards 1s;
+  transform: translate3D(300px, 0, 0);
+  pointer-events: none;
 }
 
 .word {
   position: relative;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fafaf5;
+  font-size: 120px;
+  font-weight: 900;
+  line-height: 103px;
 }
 
 .word:nth-child(2) {
-  margin-left: -50px;
+  transform: translateX(-180px);
 }
 
 .word:nth-child(3) {
-  margin-left: 30px;
+  transform: translateX(110px);
 }
 
 .char {
   opacity: 0;
-  animation: fadeIn 0.5s ease forwards;
 }
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes titleFadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-#replay {
-  margin-top: 30px;
-  padding: 15px 30px;
-  background: linear-gradient(to right, var(--purple), var(--turquois), var(--yellow));
+/* -- Button -- */
+#redirect-button {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10%;
+  height: 50px;
+  width: 180px;
+  background: var(--yellow);
   border-radius: 30px;
   border: none;
-  color: #fff;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  font-size: 18px;
-  text-transform: uppercase;
-  transform: translateX(300px) scale(0);
-  animation: slideIn 1s forwards 3s;
+  font-size: 15px;
+  text-decoration: none;
+  color: #fafaf6;
+  overflow: hidden;
+  z-index: 5;
 }
 
-@keyframes slideIn {
-  to {
-    transform: translateX(0) scale(1);
-  }
+#redirect-button .button-bg {
+  background-color: rgba(163, 116, 255, var(--tw-bg-opacity));
+  overflow: hidden;
+  border-radius: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(1);
+  transition: transform 1.8s cubic-bezier(.19, 1, .22, 1);
 }
+
+#redirect-button .button-bg-layer {
+  border-radius: 9999px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(0);
+}
+
+#redirect-button .button-bg-layer.-yellow {
+  background-color: rgba(255, 208, 116, var(--tw-bg-opacity));
+}
+
+#redirect-button .button-bg-layer.-turquoise {
+  background-color: rgba(23, 241, 209, var(--tw-bg-opacity));
+}
+
+#redirect-button .button-bg-layer.-purple {
+  background-color: rgba(163, 116, 255, var(--tw-bg-opacity));
+}
+
+#redirect-button .button-inner,
+#redirect-button .button-inner-hover,
+#redirect-button .button-inner-static {
+  pointer-events: none;
+  display: block;
+}
+
+#redirect-button .button-inner {
+  position: relative;
+}
+
+#redirect-button .button-inner-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: translateY(70%);
+}
+
+#redirect-button:hover .button-bg {
+  transform: scale(.95);
+}
+
+#redirect-button:hover .button-bg-layer {
+  transition: transform 1.3s cubic-bezier(.19, 1, .22, 1), opacity .3s linear;
+  transform: scale(1);
+}
+
+#redirect-button:hover .button-bg-layer-2 {
+  transition-delay: .1s;
+}
+
+#redirect-button:hover .button-bg-layer-3 {
+  transition-delay: .2s;
+}
+
+#redirect-button:hover .button-inner-static {
+  opacity: 0;
+  transform: translateY(-70%);
+  transition: transform 1.4s cubic-bezier(.19, 1, .22, 1), opacity .3s linear;
+}
+
+#redirect-button:hover .button-inner-hover {
+  opacity: 1;
+  transform: translateY(0);
+  transition: transform 1.4s cubic-bezier(.19, 1, .22, 1), opacity 1.4s cubic-bezier(.19, 1, .22, 1);
+}
+

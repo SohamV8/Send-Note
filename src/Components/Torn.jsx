@@ -1,226 +1,123 @@
-import React, { useEffect, useState } from 'react';
-import gsap from 'gsap'; // Import GSAP library
+import React, { useEffect, useRef } from 'react';
 import './Torn.css';
+import { gsap } from 'gsap';
+import { Link } from 'react-router-dom';
 
 function Torn() {
-  const [allowRotation, setAllowRotation] = useState(true);
-  const [btnPlayed, setBtnPlayed] = useState(false);
-
-  const titleSlideIn = () => {
-    document.querySelectorAll(".word").forEach((word, wordIdx) => {
-      Array.from(word.children).forEach((char, charIdx) => {
-        gsap.fromTo(
-          char,
-          {
-            opacity: 0,
-            x: 0
-          },
-          {
-            opacity: 1,
-            x: -300,
-            ease: "elastic.out(1.1, 0.7)",
-            duration: 1.2,
-            delay: wordIdx * 0.2 + charIdx * 0.03
-          }
-        );
-      });
-    });
-  };
+  const blobRef = useRef(null);
+  const videoContainerRef = useRef(null);
 
   useEffect(() => {
     const handleMouseMove = (mouseEvent) => {
       const { clientX, clientY } = mouseEvent;
-      
-      // Ensure #blob exists before animating
-      const blob = document.querySelector("#blob");
-      if (blob) {
-        gsap.to(blob, {
-          left: clientX,
-          top: clientY,
-          duration: 2
-        });
+
+      if (blobRef.current) {
+        blobFollowMouse(clientX, clientY);
       }
 
-      const videoContainer = document.querySelector("#video-container");
-      if (videoContainer) {
-        const rect = videoContainer.getBoundingClientRect();
+      if (videoContainerRef.current) {
+        const rect = videoContainerRef.current.getBoundingClientRect();
         const centerX = rect.left + rect.width / 2;
         const centerY = rect.top + rect.height / 2;
         const distanceX = (clientX - centerX) / rect.width;
         const distanceY = (clientY - centerY) / rect.height;
 
-        if (allowRotation) {
-          gsap.to(videoContainer, {
-            rotateX: -20 * distanceY,
-            rotateY: 20 * distanceX,
-            duration: 0.5,
-            ease: "power1.out"
-          });
-        }
+        rotateVideo3D(distanceX, distanceY);
       }
     };
 
-    const handleButtonMouseOver = () => {
-      buttonGrow();
-      buttonTextIn();
-      if (!btnPlayed) {
-        buttonColorsWave();
-        setBtnPlayed(true);
-      }
-    };
+    window.addEventListener('mousemove', handleMouseMove);
 
-    const handleButtonMouseOut = () => {
-      buttonShrink();
-      setBtnPlayed(false);
-    };
-
-    const handleButtonClick = () => {
-      titleSlideIn();
-      videoButtonPopIn();
-    };
-
-    const buttonGrow = () => {
-      gsap.to("#normalButton", {
-        width: 170,
-        height: 46
-      });
-    };
-
-    const buttonShrink = () => {
-      gsap.to("#normalButton", {
-        width: 180,
-        height: 50
-      });
-    };
-
-    const buttonColorsWave = () => {
-      gsap.fromTo(
-        "#purple",
-        {
-          scale: 0
-        },
-        {
-          scale: 1
-        }
-      );
-      gsap.fromTo(
-        "#turquois",
-        {
-          scale: 0
-        },
-        {
-          scale: 1,
-          delay: 0.1
-        }
-      );
-      gsap.fromTo(
-        "#yellow",
-        {
-          scale: 0
-        },
-        {
-          scale: 1,
-          delay: 0.2
-        }
-      );
-    };
-
-    const buttonTextIn = () => {
-      gsap.fromTo(
-        ".text",
-        {
-          y: 9
-        },
-        {
-          y: -8
-        }
-      );
-      gsap.fromTo(
-        "#text-static",
-        {
-          opacity: 1
-        },
-        {
-          opacity: 0
-        }
-      );
-      gsap.fromTo(
-        "#text-reveal",
-        {
-          opacity: 0
-        },
-        {
-          opacity: 1
-        }
-      );
-    };
-
-    // Event listeners setup
-    window.addEventListener("mousemove", handleMouseMove);
-    const button = document.querySelector("#normalButton");
-    if (button) {
-      button.addEventListener("mouseover", handleButtonMouseOver);
-      button.addEventListener("mouseout", handleButtonMouseOut);
-      button.addEventListener("click", handleButtonClick);
-    }
-
-    // Cleanup function
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      if (button) {
-        button.removeEventListener("mouseover", handleButtonMouseOver);
-        button.removeEventListener("mouseout", handleButtonMouseOut);
-        button.removeEventListener("click", handleButtonClick);
-      }
-    };
-  }, [allowRotation, btnPlayed]); // Dependency array ensures effect runs only when allowRotation or btnPlayed changes
-
-  useEffect(() => {
     // Initial animations
     titleSlideIn();
-    videoButtonPopIn();
-  }, []); // Empty dependency array ensures these animations run only once on mount
+    videoPopIn();
+    blobRotate();
 
-  const videoButtonPopIn = () => {
-    setAllowRotation(false);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
 
-    gsap.fromTo(
-      "#normalButton, #video-container",
-      { scale: 0 },
-      {
-        scale: 1,
-        ease: "elastic.out(1, 0.8)",
-        duration: 0.8,
-        delay: 0.4,
-        onComplete: () => {
-          setAllowRotation(true);
-        }
-      }
-    );
+  // GSAP Animations
+  const blobRotate = () => {
+    gsap.timeline({ repeat: -1, ease: 'none' })
+      .to(blobRef.current, { rotation: 180, scaleX: 1.6 })
+      .to(blobRef.current, { rotation: 360, scaleX: 1 })
+      .totalDuration(17)
+      .play();
+  };
+
+  const blobFollowMouse = (x, y) => {
+    const maxX = window.innerWidth - blobRef.current.offsetWidth / 2;
+    const maxY = window.innerHeight - blobRef.current.offsetHeight / 2;
+    const boundedX = Math.min(Math.max(x, blobRef.current.offsetWidth / 2), maxX);
+    const boundedY = Math.min(Math.max(y, blobRef.current.offsetHeight / 2), maxY);
+    gsap.to(blobRef.current, {
+      left: boundedX,
+      top: boundedY,
+      duration: 2,
+    });
+  };
+
+  const rotateVideo3D = (distanceX, distanceY) => {
+    gsap.to(videoContainerRef.current, {
+      rotateX: -20 * distanceY,
+      rotateY: 20 * distanceX,
+      duration: 0.5,
+      ease: 'power1.out',
+    });
+  };
+
+  const videoPopIn = () => {
+    gsap.fromTo(videoContainerRef.current, { scale: 0 }, {
+      scale: 1,
+      ease: 'elastic.out(1, 0.8)',
+      duration: 0.8,
+      delay: 0.4,
+    });
+  };
+
+  const titleSlideIn = () => {
+    document.querySelectorAll('.word').forEach((word, wordIdx) => {
+      Array.from(word.children).forEach((char, charIdx) => {
+        gsap.fromTo(char, {
+          opacity: 0,
+          x: 0,
+        }, {
+          opacity: 1,
+          x: -30,
+          ease: 'elastic.out(1.1, 0.7)',
+          duration: 1.2,
+          delay: wordIdx * 0.2 + charIdx * 0.03,
+        });
+      });
+    });
   };
 
   return (
-    <div className='backtorn'>
-      <section id="background">
-        <div id="blob" />
-        <div id="blur" />
+    <div className="Apptorn">
+      <section id="background-torn">
+        <div id="blob" ref={blobRef}></div>
+        <div id="blur"></div>
       </section>
       <main>
-        <div id="video-container">
+        <div id="video-container" ref={videoContainerRef}>
           <video
             poster=""
             src=""
-            muted=""
-            autoPlay=""
-            loop=""
-            playsInline=""
-          />
+            muted
+            autoPlay
+            loop
+            playsInline
+          ></video>
         </div>
-        <div id="title">
+        <div id="title-torn">
           <span className="word">
-            <span className="char">n</span>
+            <span className="char">N</span>
             <span className="char">o</span>
-            <span className="char">t</span>
+            <span className="char"> </span>
+            <span className="char"> </span>
+            <span className="char">T</span>
             <span className="char">e</span>
             <span className="char">n</span>
             <span className="char">s</span>
@@ -229,7 +126,7 @@ function Torn() {
             <span className="char">n</span>
           </span>
           <span className="word">
-            <span className="char">d</span>
+            <span className="char">D</span>
             <span className="char">u</span>
             <span className="char">r</span>
             <span className="char">i</span>
@@ -237,24 +134,28 @@ function Torn() {
             <span className="char">g</span>
           </span>
           <span className="word">
-            <span className="char">e</span>
+            <span className="char">E</span>
             <span className="char">x</span>
             <span className="char">a</span>
             <span className="char">m</span>
             <span className="char">s</span>
           </span>
         </div>
-        <button id="normalButton">
-          <span id="purple" />
-          <span id="turquois" />
-          <span id="yellow" />
-          <span className="text" id="text-static">
-            PYQ
-          </span>
-          <span className="text" id="text-reveal">
-            PYQ
-          </span>
-        </button>
+        <Link to="/PYQ">
+          <button id="redirect-button">
+            <span className="button-bg">
+              <span className="button-bg-layers">
+                <span className="button-bg-layer button-bg-layer-1 -yellow"></span>
+                <span className="button-bg-layer button-bg-layer-2 -turquoise"></span>
+                <span className="button-bg-layer button-bg-layer-3 -purple"></span>
+              </span>
+            </span>
+            <span className="button-inner">
+              <span className="button-inner-static">PYQ</span>
+              <span className="button-inner-hover">PYQ</span>
+            </span>
+          </button>
+        </Link>
       </main>
     </div>
   );

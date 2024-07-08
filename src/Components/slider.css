@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Caveat:wght@400..700&family=Cedarville+Cursive&family=Homemade+Apple&display=swap');
 
+
+.sliding{
+  z-index: 100;
+  background-color:  #0b1020;
+}
+
 .wrapperslide {
   margin-top: 2rem;
   width: 90%;

@@ -25,11 +25,11 @@ const Slider = () => {
   ));
 
   return (
-    <>
+    <div className="sliding">
       <div className="wrapperslide">{itemsLeft}</div>
       <h1 className='get'>GET <span className='hand'>HandWritten Notes</span></h1>
       <div className="wrapperslide">{itemsRight}</div>
-    </>
+    </div>
   );
 };
 
