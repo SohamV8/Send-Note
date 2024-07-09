@@ -9,21 +9,24 @@
   align-items: center;
   z-index: 100;
   margin-bottom: -18px;
+  background-color: #0b1020;
 }
 
 .logo {
   margin-left: 20px;
   margin-right: auto;
-margin-top: -10px;
+  margin-top: -10px;
 }
 
 .head {
   flex: 1;
   text-align: center;
+  position: relative;
 }
 
 .navbar {
   display: inline-block;
+  transition: all 0.3s ease;
 }
 
 .navbar a {
@@ -32,7 +35,7 @@ margin-top: -10px;
   color: rgb(255, 255, 255);
   text-decoration: none;
   font-weight: 500;
-  transition: 0.2s;
+  transition: color 0.2s;
   cursor: pointer;
   font-family: 'Lato', sans-serif;
 }
@@ -42,12 +45,85 @@ margin-top: -10px;
   color: #FFDB58;
 }
 
-.logo-img{
+.logo-img {
   height: 100px;
   width: 100px;
+  margin-left: 20px;
 }
-.acc{
-float: right;
-margin-right: 22px;
-margin-top: -20px;
+
+.acc {
+  float: right;
+  margin-right: 22px;
+  margin-top: -20px;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 20px;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 110px;
+    left: -100%;
+    height: 100vh;
+    width: 100%;
+
+    background: rgba( 0, 0, 0, 0.65 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 10px );
+    text-align: center;
+    transition: left 0.5s ease;
+    padding-top: 20px;
+  }
+
+  .page-header {
+    position: fixed;
+    width: 100%;
+    height: auto;
+  }
+
+  .navbar.open {
+    left: 0;
+  }
+
+  .navbar a {
+    font-size: 28px;
+    display: block;
+    margin: 20px 0;
+    color: white;
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.8);
+    transition: margin 0.5s ease, color 0.2s;
+  }
+
+  .logo-img {
+    height: 100px;
+    width: 100px;
+    margin-left: 10px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .acc {
+    display: none;
+  }
+
+  .navbar.open .acc {
+    display: block;
+  }
 }

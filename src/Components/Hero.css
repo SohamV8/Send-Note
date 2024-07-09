@@ -169,3 +169,24 @@ svg {
     background-color: black;
   }
 }
+
+@media (max-width: 768px) {
+  .hero-img {
+    width: 200px;
+  }
+
+  .gif-img {
+    max-width: 100px;
+    display: none;
+  }
+}
+
+#spotlight {
+  position: fixed;
+  opacity: 1;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
