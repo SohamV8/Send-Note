@@ -1,0 +1,36 @@
+img.torn {
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  position: absolute;
+  margin-top: -80px;
+}
+
+/* Container styling */
+.hyperplexed-container {
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -450px;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  top: 0;
+}
+
+/* H1 styling */
+.hyperplexed-container h1 {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(3rem, 10vw, 10rem);
+  color: white;
+  padding: 0 clamp(1rem, 2vw, 3rem);
+  border-radius: clamp(0.4rem, 0.75vw, 1rem);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.hyperplexed-container h1:hover {
+  background-color: white;
+  color: black;
+}

@@ -1,19 +1,19 @@
 import React, { useRef, useEffect, useCallback } from 'react';
 import './Hero.css';
-import FINALPNG from '../assets/FINALPNG.png';
+import FINALPNG from '../../assets/FINALPNG.png';
 
-import animation1 from '../assets/1.gif';
-import animation2 from '../assets/2.gif';
-import animation3 from '../assets/3.gif';
-import animation4 from '../assets/4.gif';
-import animation5 from '../assets/5.gif';
-import animation6 from '../assets/6.gif';
-import animation7 from '../assets/7.gif';
-import animation8 from '../assets/8.gif';
-import animation9 from '../assets/9.gif';
-import animation10 from '../assets/10.gif';
-import animation11 from '../assets/11.gif';
-import animation12 from '../assets/12.gif';
+import animation1 from '../../assets/1.gif';
+import animation2 from '../../assets/2.gif';
+import animation3 from '../../assets/3.gif';
+import animation4 from '../../assets/4.gif';
+import animation5 from '../../assets/5.gif';
+import animation6 from '../../assets/6.gif';
+import animation7 from '../../assets/7.gif';
+import animation8 from '../../assets/8.gif';
+import animation9 from '../../assets/9.gif';
+import animation10 from '../../assets/10.gif';
+import animation11 from '../../assets/11.gif';
+import animation12 from '../../assets/12.gif';
 
 
 const spotlightEl = document.querySelector("#spotlight");

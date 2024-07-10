@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import './Torn.css';
 import { gsap } from 'gsap';
 import { Link } from 'react-router-dom';
-import protitle from '../assets/protitle.mp4';
+import protitle from '../../assets/protitle.mp4';
 
 function Torn() {
   const blobRef = useRef(null);
