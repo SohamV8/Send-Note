@@ -17,6 +17,7 @@ img.torn {
 .hyperplexed-container {
   z-index: 20;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -29,11 +30,19 @@ img.torn {
 /* H1 styling */
 .hyperplexed-container h1 {
   font-family: 'Space Mono', monospace;
-  font-size: clamp(3rem, 10vw, 10rem);
+  font-size: clamp(3rem, 10vw, 10rem); /* Default size */
   color: white;
   padding: 0 clamp(1rem, 2vw, 3rem);
   border-radius: clamp(0.4rem, 0.75vw, 1rem);
   transition: background-color 0.3s, color 0.3s;
+}
+
+.hyperplexed-container h1:first-of-type {
+  font-size: 5rem; /* Larger size for the first heading */
+}
+
+.hyperplexed-container h1:last-of-type {
+  font-size: 3rem; /* Smaller size for the second heading */
 }
 
 .hyperplexed-container h1:hover {
@@ -70,10 +79,13 @@ img.torn {
   align-items: center;
   justify-content: center;
   padding: 16px;
+  margin-top: -200px;
+  z-index: 1000;
 }
 
 .btnAI {
   display: flex;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   align-items: center;
   justify-content: center;
   border-radius: 100px;
@@ -121,7 +133,7 @@ img.torn {
   border-radius: 100px;
   color: var(--color-green);
   font-weight: 500;
-  font-size: 22px;
+  font-size: 18px; /* Updated font size in pixels */
   z-index: 1;
   transition: all 0.18s ease;
   background: rgba(0, 0, 0, 0.3);
