@@ -42,14 +42,16 @@ const AI = () => {
   }, [letters]);
 
   return (
-    <>
-      <img src={torntry} alt="torn effect" className="torn" />
-      <Vortex>
-        <div className="hyperplexed-container">
+    <div className='AIBack'>
+      <img src={torntry} alt="torn effect" className="torn" /> 
+      
+      <div className="hyperplexed-container">
           <h1 ref={h1Ref} data-value="HYPERPLEXED">HYPERPLEXED</h1>
         </div>
+      <Vortex>
+       
       </Vortex>
-    </>
+    </div>
   );
 };
 
