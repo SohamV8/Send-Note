@@ -43,14 +43,19 @@ const AI = () => {
 
   return (
     <div className='AIBack'>
-      <img src={torntry} alt="torn effect" className="torn" /> 
+      <img src={torntry} alt="torn effect" className="torn" />
       
       <div className="hyperplexed-container">
-          <h1 ref={h1Ref} data-value="HYPERPLEXED">HYPERPLEXED</h1>
-        </div>
-      <Vortex>
-       
-      </Vortex>
+        <h1 ref={h1Ref} data-value="HYPERPLEXED">HYPERPLEXED</h1>
+      </div>
+
+      <Vortex />
+
+      <div className="containerbtn">
+        <a className="btnAI" href="#">
+          <span className="btnInner">Button</span>
+        </a>
+      </div>
     </div>
   );
 };
