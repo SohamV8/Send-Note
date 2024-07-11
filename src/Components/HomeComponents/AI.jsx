@@ -48,8 +48,9 @@ const AI = () => {
   }, [letters]);
 
   return (
+    <>      
     <div className='AIBack'>
-      <img src={torntry} alt="torn effect" className="torn" />
+<img src={torntry} alt="torn effect" className="torn" />
       
       <div className="hyperplexed-container">
         <h1 ref={h1Ref1} data-value="HAVE A DOUBT ?">HAVE A DOUBT?</h1>
@@ -64,6 +65,7 @@ const AI = () => {
         </Link>
       </div>
     </div>
+    </>
   );
 };
 

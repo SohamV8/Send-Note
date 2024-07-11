@@ -38,11 +38,11 @@ img.torn {
 }
 
 .hyperplexed-container h1:first-of-type {
-  font-size: 5rem; /* Larger size for the first heading */
+  font-size: clamp(2rem, 8vw, 5rem); /* Larger size for the first heading */
 }
 
 .hyperplexed-container h1:last-of-type {
-  font-size: 3rem; /* Smaller size for the second heading */
+  font-size: clamp(1.5rem, 6vw, 3rem); /* Smaller size for the second heading */
 }
 
 .hyperplexed-container h1:hover {
@@ -148,4 +148,75 @@ img.torn {
 
 .btnAI:active {
   transform: scale(0.95);
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hyperplexed-container h1:first-of-type {
+    font-size: 4rem;
+  }
+
+  .hyperplexed-container h1:last-of-type {
+    font-size: 2.5rem;
+  }
+
+  .containerbtn {
+    margin-top: -150px;
+  }
+
+  .btnInner {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+  img.torn {
+    margin-top: -50px;
+  }
+
+  .AIBack {
+    margin-top: -50px;
+  }
+
+  .hyperplexed-container h1:first-of-type {
+    font-size: 3rem;
+  }
+
+  .hyperplexed-container h1:last-of-type {
+    font-size: 2rem;
+  }
+
+  .containerbtn {
+    margin-top: -100px;
+  }
+
+  .btnInner {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  img.torn {
+    margin-top: -30px;
+  }
+
+  .AIBack {
+    margin-top: -30px;
+  }
+
+  .hyperplexed-container h1:first-of-type {
+    font-size: 2rem;
+  }
+
+  .hyperplexed-container h1:last-of-type {
+    font-size: 1.5rem;
+  }
+
+  .containerbtn {
+    margin-top: -50px;
+  }
+
+  .btnInner {
+    font-size: 12px;
+  }
 }

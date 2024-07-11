@@ -119,8 +119,8 @@ function Torn() {
           <span className="word">
             <span className="char">N</span>
             <span className="char">o</span>
-</span>
-<span className="word">
+          </span>
+          <span className="word">
             <span className="char">T</span>
             <span className="char">e</span>
             <span className="char">n</span>
