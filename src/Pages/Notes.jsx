@@ -3,6 +3,7 @@ import './notes.css'
 import Sidebar from '../Components/Sidebar';
 import SearchBar from '../Components/SearchBar';
 import PdfViewer from '../Components/PdfViewer';  
+import Footer from '../Components/Footer';
 
 function Notes() {
   return (
@@ -11,6 +12,7 @@ function Notes() {
       <div className="right-cont">
       <SearchBar />
       <PdfViewer />
+      <Footer />
       </div>
     </>
   );

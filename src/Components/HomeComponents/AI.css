@@ -38,11 +38,11 @@ img.torn {
 }
 
 .hyperplexed-container h1:first-of-type {
-  font-size: clamp(2rem, 8vw, 5rem); /* Larger size for the first heading */
+  font-size: clamp(2.5rem, 10vw, 15rem); /* Larger size for the first heading */
 }
 
 .hyperplexed-container h1:last-of-type {
-  font-size: clamp(1.5rem, 6vw, 3rem); /* Smaller size for the second heading */
+  font-size: clamp(2rem, 6vw, 3.5rem); /* Smaller size for the second heading */
 }
 
 .hyperplexed-container h1:hover {
@@ -133,7 +133,7 @@ img.torn {
   border-radius: 100px;
   color: var(--color-green);
   font-weight: 500;
-  font-size: 18px; /* Updated font size in pixels */
+  font-size: 28px; /* Updated font size in pixels */
   z-index: 1;
   transition: all 0.18s ease;
   background: rgba(0, 0, 0, 0.3);

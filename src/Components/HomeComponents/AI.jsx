@@ -53,7 +53,7 @@ const AI = () => {
 <img src={torntry} alt="torn effect" className="torn" />
       
       <div className="hyperplexed-container">
-        <h1 ref={h1Ref1} data-value="HAVE A DOUBT ?">HAVE A DOUBT?</h1>
+        <h1 ref={h1Ref1} data-value="HAVE A DOUBT ?">HAVE A DOUBT ?</h1>
         <h1 ref={h1Ref2} data-value="LET A.I DO IT FOR YOU">LET A.I DO IT FOR YOU</h1>
       </div>
 
