@@ -5,7 +5,7 @@
             position: relative;
             top: 120px;
             margin-top: -80px;
-            z-index: 100;
+            z-index: 10;
         }
 
         iframe {
@@ -13,3 +13,11 @@
             height: calc(100vh - 80px); /* Adjust the height, considering the header height and gap */
             border: none;
         }
+
+        @media (max-width: 768px) {
+          #iframe-container{
+
+              margin-top: 10px;
+          }
+      }
+      

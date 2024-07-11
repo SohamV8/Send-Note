@@ -99,5 +99,12 @@
     .pdf-name {
       font-size: 12px; /* Adjust font size as needed */
     }
+
+    @media (max-width: 450px) {
+      .pdf-item {
+        width: 220px;
+        height: auto; 
+      }
+    }
   }
   
