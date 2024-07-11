@@ -170,12 +170,9 @@ img.torn {
 }
 
 @media (min-width: 480px) and (max-width: 768px) {
-  img.torn {
-    margin-top: -50px;
-  }
 
   .AIBack {
-    margin-top: -50px;
+    margin-top: -0px;
   }
 
   .hyperplexed-container h1:first-of-type {
@@ -190,18 +187,15 @@ img.torn {
     margin-top: -100px;
   }
 
-  .btnInner {
-    font-size: 14px;
+  img.torn{
+    margin-top: -30px;
   }
 }
 
 @media (max-width: 480px) {
-  img.torn {
-    margin-top: -30px;
-  }
 
   .AIBack {
-    margin-top: -30px;
+    margin-top: 0px;
   }
 
   .hyperplexed-container h1:first-of-type {
@@ -216,7 +210,7 @@ img.torn {
     margin-top: -50px;
   }
 
-  .btnInner {
-    font-size: 12px;
+  img.torn{
+    margin-top: -20px;
   }
 }
