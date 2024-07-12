@@ -38,6 +38,8 @@ h3.infoot {
   text-shadow: 1px 2px 4px rgba(31, 0, 0, 1);
   background: var(--paper-color);
   bottom: 0;
+  width: 100%;
+  left: 0px;
   padding: calc(var(--top-space) - 0.5lh) 3rem 1rem 5.5rem;
   font-family: system-ui, sans-serif;
   font-size: 1.5rem;
@@ -68,9 +70,9 @@ h3.infoot {
   position: relative;
 }
 
-@media (min-width:480px)and(max-width: 768px) {
+/* Responsive adjustments */
+@media (min-width: 480px) and (max-width: 768px) {
   .paper {
-    margin: 1rem;
     padding: calc(var(--top-space) - 0.5lh) 2rem 1rem 4rem;
     font-size: 1.2rem;
   }
@@ -94,17 +96,19 @@ h3.infoot {
 }
 
 @media (max-width: 480px) {
-  img.last-torn{
+  img.last-torn {
     margin-top: -25px;
   }
+
   .paper {
-    margin: 0.5rem;
-    padding: calc(var(--top-space) - 0.5lh) 1rem 1rem 3rem;
+    padding: calc(var(--top-space) - 0.5lh) 1rem 1rem 4.7rem;
     font-size: 1rem;
   }
 
   .foot {
     font-size: 24px;
+    word-wrap: break-word;
+    white-space: normal;
   }
 
   h3.infoot {
@@ -122,15 +126,20 @@ h3.infoot {
   }
 }
 
-
 span.foot {
   font-size: 48px;
+  display: flex !important;
   position: relative;
   z-index: 1;
   color: aliceblue;
   display: inline-block;
   padding: 0 0.1em;
   pointer-events: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+
 }
 
 .input-group {
