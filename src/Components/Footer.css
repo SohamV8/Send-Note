@@ -7,7 +7,7 @@
   --top-space: 4lh;
 }
 
-img.last-torn{
+img.last-torn {
   width: 100%;
   height: auto;
   z-index: 1;
@@ -15,7 +15,7 @@ img.last-torn{
   margin-top: -120px;
 }
 
-img.lastimg{
+img.lastimg {
   width: 150px;
   height: auto;
   z-index: 1;
@@ -26,11 +26,12 @@ img.lastimg{
   align-items: center;
   justify-content: center;
   flex-direction: row;
-margin-top: -70px;
+  margin-top: -150px;
 }
 
-h3.infoot{
+h3.infoot {
   font-size: 30px;
+  color: hsl(0, 0%, 100%);
 }
 
 .paper {
@@ -84,21 +85,6 @@ h3.infoot{
   }
 }
 
-mark {
-  position: relative;
-  display: inline-block;
-  background: none;
-  z-index: 10;
-  line-height: normal;
-  font-weight: 700;
-  margin: 0;
-  padding: 0;
-  outline: none;
-  color: rgba(0, 0, 0, 0.9);
-  text-decoration: none;
-  white-space: nowrap;
-}
-
 span.foot {
   font-size: 48px;
   position: relative;
@@ -107,42 +93,6 @@ span.foot {
   display: inline-block;
   padding: 0 0.1em;
   pointer-events: none;
-}
-
-svg.footer1 {
-  position: absolute;
-  top: -10%;
-  left: -10%;
-  right: -10%;
-  bottom: -10%;
-  z-index: -1;
-  overflow: hidden;
-  margin: auto;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  fill: none;
-  stroke-width: 54px;
-  stroke-dasharray: 400;
-  stroke-dashoffset: 400;
-  transition: stroke-dashoffset 800ms ease-in-out;
-  will-change: stroke-dashoffset;
-  pointer-events: none;
-}
-
-svg.footer1:first-of-type {
-  width: 105.5%;
-  height: 104%;
-  transform: skewX(-17deg);
-}
-
-svg.footer1:last-of-type {
-  width: 104%;
-  transform: skewX(-12deg);
-}
-
-mark:hover > svg {
-  stroke-dashoffset: 0;
 }
 
 .input-group {
