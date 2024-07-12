@@ -6,6 +6,7 @@ import Slider from '../Components/HomeComponents/Slider';
 import Torn from '../Components/HomeComponents/Torn';
 import AI from '../Components/HomeComponents/AI';
 import Footer from '../Components/Footer';
+import Feature from '../Components/HomeComponents/Feature';
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <Slider />
       <Torn />
       <AI />
+      <Feature />
       <Footer />
     </div>
   );

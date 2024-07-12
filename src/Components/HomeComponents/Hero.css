@@ -6,7 +6,7 @@
   height: 100vh;
   width: 100%;
   overflow: hidden;
-  background-color: #0b1020;
+     background-color: #0b1020;
 }
 
 .hero-img {
@@ -159,7 +159,7 @@ svg {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #0b1020;
+  background-color: white;
   mask-image: radial-gradient(ellipse at center, transparent 20%, black);
   pointer-events: none;
 }
@@ -184,7 +184,7 @@ svg {
 #spotlight {
   position: fixed;
   opacity: 1;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   top: 0;
   left: 0;
