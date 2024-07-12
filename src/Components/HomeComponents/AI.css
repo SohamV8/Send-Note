@@ -199,15 +199,15 @@ img.torn {
   }
 
   .hyperplexed-container h1:first-of-type {
-    font-size: 2rem;
+    font-size: 4rem;
   }
 
   .hyperplexed-container h1:last-of-type {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   .containerbtn {
-    margin-top: -50px;
+    margin-top: -175px;
   }
 
   img.torn{
