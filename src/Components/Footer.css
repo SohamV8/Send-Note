@@ -1,10 +1,32 @@
 :root {
-  --main-line-color: hsla(231, 19%, 73%, 0.825);
+  --main-line-color: hsla(231, 19%, 73%, 0.09);
   --side-line-color: hsl(350, 100%, 91%);
-  --paper-color: hsl(0, 0%, 12%);
+  --paper-color: hsl(0, 0%, 10%);
   --ink-color: hsl(0, 0%, 100%);
   --line-thickness: 2.5px;
   --top-space: 4lh;
+}
+
+img.last-torn{
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  position: absolute;
+  margin-top: -120px;
+}
+
+img.lastimg{
+  width: 150px;
+  height: auto;
+  z-index: 1;
+  float: right;
+  display: flex;
+  position: relative;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+margin-top: -70px;
 }
 
 h3.infoot{

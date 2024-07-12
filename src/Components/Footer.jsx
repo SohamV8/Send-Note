@@ -1,8 +1,12 @@
 import React from 'react';
 import './Footer.css';
+import FINALPNG from '../assets/FINALPNG.png';
+import tornlast from '../assets/tornlast.png';
 
 const Footer = () => {
   return (
+    <>
+    <img src={tornlast} alt='paper' className='last-torn'></img>
     <div className="paper">
       <mark>
         <span className='foot'>Want to contribute?</span>
@@ -39,7 +43,10 @@ const Footer = () => {
           <path d="m 3.518915,27.827324 c 55.429038,4.081 111.581115,5.822 167.117815,2.867 22.70911,-1.208 45.39827,-0.601 68.126,-0.778 28.38172,-0.223 56.76078,-1.024 85.13721,-1.33 24.17378,-0.261 48.4273,0.571 72.58114,0.571" />
         </svg>
       </mark>
+
+      <img src={FINALPNG} alt='logo' className='lastimg'></img>
     </div>
+    </>
   );
 };
 
