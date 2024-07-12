@@ -68,22 +68,60 @@ h3.infoot {
   position: relative;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
+@media (min-width:480px)and(max-width: 768px) {
   .paper {
     margin: 1rem;
     padding: calc(var(--top-space) - 0.5lh) 2rem 1rem 4rem;
     font-size: 1.2rem;
   }
+
+  .foot {
+    font-size: 36px;
+  }
+
+  h3.infoot {
+    font-size: 24px;
+  }
+
+  .social {
+    font-size: 24px;
+  }
+
+  img.lastimg {
+    width: 120px;
+    margin-top: -60px;
+  }
 }
 
 @media (max-width: 480px) {
+  img.last-torn{
+    margin-top: -25px;
+  }
   .paper {
     margin: 0.5rem;
     padding: calc(var(--top-space) - 0.5lh) 1rem 1rem 3rem;
     font-size: 1rem;
   }
+
+  .foot {
+    font-size: 24px;
+  }
+
+  h3.infoot {
+    font-size: 18px;
+  }
+
+  .social {
+    font-size: 18px;
+  }
+
+  img.lastimg {
+    width: 100px;
+    display: none;
+    margin-top: -50px;
+  }
 }
+
 
 span.foot {
   font-size: 48px;

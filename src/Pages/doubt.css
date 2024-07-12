@@ -21,6 +21,7 @@
   width: calc(100% - 150px);
   padding: 10px;
   box-sizing: border-box;
+  color: white;
   border: 2px solid #ccc;
   background-color: transparent;
   border-radius: 15px;
@@ -33,18 +34,30 @@
   border: none;
   cursor: pointer;
   margin-left: 6px;
-  transition: background-color 0.3s ease; /* Add a smooth transition */
 }
 
-.send-button:hover {
-  background-color: #ddd; /* Change color on hover */
-}
 
 .chat-message {
   margin-bottom: 10px;
   padding: 5px;
+  display: flex;
   border-radius: 5px;
   background-color: #000000;
   color: wheat;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  align-content: center;
+  flex-direction: row;
 }
+
+@media (max-width: 430px) {
+  .chat-input{
+    width: calc(100% - 100px);
+  }
+  .senddoubt{
+    width: 40px;
+  }
+}
+

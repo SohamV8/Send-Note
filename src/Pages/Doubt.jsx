@@ -90,7 +90,7 @@ function Doubt() {
           onKeyPress={handleKeyPress}
         />
         <button className="send-button" onClick={sendMessage}>
-          <img src={sendIcon} alt="Send" />
+          <img src={sendIcon} alt="Send" className='senddoubt'/>
         </button>
       </div>
     </div>

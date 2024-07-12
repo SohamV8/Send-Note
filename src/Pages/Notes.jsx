@@ -12,7 +12,6 @@ function Notes() {
       <div className="right-cont">
       <SearchBar />
       <PdfViewer />
-      <Footer />
       </div>
     </>
   );
