@@ -10,9 +10,16 @@
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 450px) {
     .right-cont{
         margin-left: 140px;
+        margin-top: 150px;
+    }
+}
+
+@media (min-width:500px) and (max-width: 768px) {
+    .right-cont{
+        margin-left: 155px;
         margin-top: 150px;
     }
 }

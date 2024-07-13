@@ -77,7 +77,7 @@
 }
 
 /* Media query for responsive design */
-@media (max-width: 768px) {
+@media (max-width: 450px) {
   .sidebar {
     width: 125px; /* Collapse sidebar width on smaller screens */
   }
@@ -86,6 +86,18 @@
   }
   .sidebar-nav .arrow {
     display: none; /* Hide arrows on smaller screens */
+  }
+  .sidebar.toggled .sidebar-nav ul {
+    display: none; /* Hide submenus when collapsed */
+  }
+}
+
+@media (min-width:500px) and (max-width: 768px) {
+  .sidebar {
+    width: 145px; /* Collapse sidebar width on smaller screens */
+  }
+  .sidebar.toggled {
+    width: 240px; /* Expanded sidebar width when toggled */
   }
   .sidebar.toggled .sidebar-nav ul {
     display: none; /* Hide submenus when collapsed */
