@@ -15,45 +15,23 @@ import animation10 from '../../assets/10.gif';
 import animation11 from '../../assets/11.gif';
 import animation12 from '../../assets/12.gif';
 
-
-const spotlightEl = document.querySelector("#spotlight");
-
-function handleMouseMove(event) {
-    const { clientX, clientY } = event;
-    
-    spotlightEl.style.background = `radial-gradient(circle at ${clientX}px ${clientY}px, #00000000 10px, #000000ee 350px)`;
-}
-
-document.addEventListener("mousemove", handleMouseMove)
-
-
-const GifComponent = ({ className, animationData, index, elementsRef }) => {
-  const handleMouseMove = useCallback((e) => {
-    const element = elementsRef.current[index];
-    if (element) {
-      const rect = element.getBoundingClientRect();
-      const x = (e.clientX - rect.left - rect.width / 2) / 10;
-      const y = (e.clientY - rect.top - rect.height / 2) / 10;
-      element.style.transform = `translate(${x}px, ${y}px)`;
-    }
-  }, [index, elementsRef]);
-
-  useEffect(() => {
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, [handleMouseMove]);
-
-  return (
-    <div className={className} ref={(el) => (elementsRef.current[index] = el)}>
-      <img src={animationData} alt={`Animation ${index}`} className="gif-img"/>
-    </div>
-  );
-};
-
 const Hero = () => {
   const elementsRef = useRef([]);
+  const spotlightRef = useRef(null);
+
+  const handleMouseMove = useCallback((event) => {
+    if (spotlightRef.current) {
+      const { clientX, clientY } = event;
+      spotlightRef.current.style.background = `radial-gradient(circle at ${clientX}px ${clientY}px, #121933 10px, #0b1020 350px)`;
+    }
+  }, []);
+
+  useEffect(() => {
+    document.addEventListener("mousemove", handleMouseMove);
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, [handleMouseMove]);
 
   const gifs = [
     { className: 'animation1', animationData: animation1 },
@@ -70,12 +48,38 @@ const Hero = () => {
     { className: 'animation12', animationData: animation12 },
   ];
 
+  const GifComponent = ({ className, animationData, index }) => {
+    const handleGifMouseMove = useCallback((e) => {
+      const element = elementsRef.current[index];
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        const x = (e.clientX - rect.left - rect.width / 2) / 10;
+        const y = (e.clientY - rect.top - rect.height / 2) / 10;
+        element.style.transform = `translate(${x}px, ${y}px)`;
+      }
+    }, [index]);
+
+    useEffect(() => {
+      window.addEventListener('mousemove', handleGifMouseMove);
+      return () => {
+        window.removeEventListener('mousemove', handleGifMouseMove);
+      };
+    }, [handleGifMouseMove]);
+
+    return (
+      <div className={className} ref={(el) => (elementsRef.current[index] = el)}>
+        <img src={animationData} alt={`Animation ${index}`} className="gif-img" />
+      </div>
+    );
+  };
+
   return (
     <div className='Homepagetry'>
-<div id="spotlight"></div>
-      <div className="marking">      <img className='hero-img' src={FINALPNG} alt="Hero" />
+      <div id="spotlight" ref={spotlightRef}></div>
+      <div className="marking">
+        <img className='hero-img' src={FINALPNG} alt="Hero" />
         <svg id='marker' width="600" height="221" viewBox="0 0 558 206" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M556.245 134.773C467.575 179.243 47.4196 229.474 6.27055 129.113C-25.6705 51.2095 138.718 10.9139 188.54 5.09442C260.128 -3.26732 458.683 -2.18675 472.824 69.5222C482.183 116.983 425.732 151.372 392.606 163.192C333.489 184.286 272.579 197.691 209.936 204.01" stroke="#FFC425" strokeWidth="3" strokeLinecap="round"/>
+          <path d="M556.245 134.773C467.575 179.243 47.4196 229.474 6.27055 129.113C-25.6705 51.2095 138.718 10.9139 188.54 5.09442C260.128 -3.26732 458.683 -2.18675 472.824 69.5222C482.183 116.983 425.732 151.372 392.606 163.192C333.489 184.286 272.579 197.691 209.936 204.01" stroke="#FFC425" strokeWidth="3" strokeLinecap="round" />
         </svg>
       </div>
       {gifs.map((gif, index) => (
@@ -84,7 +88,6 @@ const Hero = () => {
           className={gif.className}
           animationData={gif.animationData}
           index={index}
-          elementsRef={elementsRef}
         />
       ))}
       <div className="grid-background-container">

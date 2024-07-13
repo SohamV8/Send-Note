@@ -25,3 +25,21 @@
     position: relative;
     overflow-x: hidden;
   }
+
+
+  body::-webkit-scrollbar {
+    width: 0.2rem;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: #1e1e24;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background: -webkit-radial-gradient(
+      circle,
+      #b9a8fd 0%,
+      #fd1d83 50%,
+      #fcc545 100%
+    );
+  }
