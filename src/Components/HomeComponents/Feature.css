@@ -1,33 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Aladin&family=Lobster&family=Mouse+Memoirs&display=swap');
+
 .Feat {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 150vh;
-    width: 100%;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150vh;
+  width: 100%;
 }
 
 img.Feat-img {
-    width: 80%;
-    height: auto;
-    z-index: 1;
-    position: absolute;
+  width: 80%;
+  height: auto;
+  z-index: 1;
+  position: relative;
 }
 
-.TEXT-FEAT{
-margin: auto;
-justify-content: center;
-align-items: center;
-text-align: center;
-position: relative;
-color: #ffffff;
+.TEXT-FEAT {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  color: #ffffff;
+  margin-top: 20px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);
 }
 
-h1.F-Title{
-font-size: 48px;
+h1.F-Title,
+h3.F-SubTitle {
+  position: relative;
+  font-family: "Aladin", system-ui;
+  color: #00ADB5;
+  font-size: 64px;
+  overflow: hidden; /* Ensure the overflow is hidden for the glitch effect */
 }
 
-h3.F-SubTitle{
-    font-size: 36px;
+h1.F-Title:hover,
+h3.F-SubTitle:hover {
+  text-shadow: 0.05em 0 0 #ec2225, -0.025em -0.05em 0 #313f97, 0.025em 0.05em 0 #50c878;
+  color: rgba(0, 194, 203, 0.2);
+}
+
+h1.F-Title:before,
+h1.F-Title:after,
+h3.F-SubTitle:before,
+h3.F-SubTitle:after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  margin: auto;
+  opacity: 0.8;
+}
+
+h1.F-Title:hover::before,
+h3.F-SubTitle:hover::before {
+  animation: glitch 650ms infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  transform: translate(-0.025em, -0.0125em) translateX(-50%);
+}
+
+h1.F-Title:hover::after,
+h3.F-SubTitle:hover::after {
+  animation: glitch 375ms infinite;
+  clip-path: polygon(0 65%, 100% 20%, 100% 100%, 0 70%);
+  transform: translate(0.0125em, 0.025em) translateX(-50%);
+}
+
+@keyframes glitch {
+  0% {
+    color: rgba(236, 34, 37, 0.2);
+    text-shadow: 0.05em 0 0 #ec2225, -0.025em -0.05em 0 #313f97, 0.025em 0.05em 0 #50c878;
+  }
+  14% {
+    text-shadow: 0.05em 0 0 #ec2225, -0.025em -0.05em 0 #313f97, 0.025em 0.05em 0 #50c878;
+  }
+  15% {
+    color: #50c878;
+    text-shadow: -0.05em -0.025em 0 #ec2225, 0.025em -0.025em 0 #313f97, -0.05em -0.05em 0 #50c878;
+  }
+  49% {
+    text-shadow: -0.05em -0.025em 0 #ec2225, 0.025em -0.025em 0 #313f97, -0.05em -0.05em 0 #50c878;
+  }
+  50% {
+    text-shadow: 0.025em 0.05em 0 #ec2225, -0.025em 0.05em 0 #313f97, 0 -0.05em 0 #50c878;
+  }
+  99% {
+    color: #313f97;
+    text-shadow: 0.025em 0.05em 0 #ec2225, -0.025em 0.05em 0 #313f97, 0 -0.05em 0 #50c878;
+  }
+  100% {
+    text-shadow: -0.025em 0 0 #ec2225, -0.025em -0.025em 0 #313f97, -0.025em -0.05em 0 #50c878;
+  }
+}
+
+h3.F-SubTitle {
+  font-size: 36px;
+  font-family: "Lobster", sans-serif;
+  color: #00ADB5;
+}
+
+img.last-torn-feat {
+  height: auto;
+  z-index: 1;
+  margin-top: -120px;
+  position: relative;
+  width: 100%;
 }

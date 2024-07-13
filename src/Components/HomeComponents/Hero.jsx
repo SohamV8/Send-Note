@@ -7,11 +7,9 @@ import animation2 from '../../assets/2.gif';
 import animation3 from '../../assets/3.gif';
 import animation4 from '../../assets/4.gif';
 import animation5 from '../../assets/5.gif';
-import animation6 from '../../assets/6.gif';
 import animation7 from '../../assets/7.gif';
 import animation8 from '../../assets/8.gif';
 import animation9 from '../../assets/9.gif';
-import animation10 from '../../assets/10.gif';
 import animation11 from '../../assets/11.gif';
 import animation12 from '../../assets/12.gif';
 
@@ -39,11 +37,9 @@ const Hero = () => {
     { className: 'animation3', animationData: animation3 },
     { className: 'animation4', animationData: animation4 },
     { className: 'animation5', animationData: animation5 },
-    { className: 'animation6', animationData: animation6 },
     { className: 'animation7', animationData: animation7 },
     { className: 'animation8', animationData: animation8 },
     { className: 'animation9', animationData: animation9 },
-    { className: 'animation10', animationData: animation10 },
     { className: 'animation11', animationData: animation11 },
     { className: 'animation12', animationData: animation12 },
   ];
