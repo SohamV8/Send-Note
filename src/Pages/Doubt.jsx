@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './doubt.css'; 
-import "../App.css";
+import './doubt.css';
 import sendIcon from '../assets/send.png';
 
 function Doubt() {
@@ -46,7 +45,7 @@ function Doubt() {
         {
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': '#', // Replace with your actual OpenAI API key
+            'Authorization': 'Bearer YOUR_OPENAI_API_KEY', // Replace with your actual OpenAI API key
           },
         }
       );
@@ -69,8 +68,6 @@ function Doubt() {
   }
 
   return (
-<>
-
     <div className="chat-container">
       <div className="chat-messages" id="chat-messages">
         {chatMessages.map((message, index) => (
@@ -94,7 +91,6 @@ function Doubt() {
         </button>
       </div>
     </div>
-    </>
   );
 }
 
