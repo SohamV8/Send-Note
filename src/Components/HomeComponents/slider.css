@@ -117,3 +117,74 @@ span.hand{
   font-weight: 500;
   font-style: normal;
 }
+
+@media (min-width: 450px)and (max-width: 768px) {
+  .itemLeft,
+  .itemRight {
+    width: 220px;
+    height: 315px;
+    position: absolute;
+    animation-timing-function: linear;
+    animation-duration: 30s;
+    border-radius: 10px;
+    animation-iteration-count: infinite;
+  }
+  
+  .itemLeft {
+    left: max(calc(220px * 8), 100%);
+    animation-name: scrollLeft;
+  }
+  
+  .itemRight {
+    right: max(calc(220px * 8), calc(100% + 220px));
+    animation-name: scrollRight;
+  }
+
+  .wrapperslide {
+    z-index: 100;
+    margin-top: 2rem;
+    width: 90%;
+    max-width: 1536px;
+    margin-inline: auto;
+    height: 315px;
+    position: relative;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0));
+}
+}
+
+@media screen and (max-width: 450px) {
+  .itemLeft,
+  .itemRight {
+    width: 150px;
+    height: 215px;
+    position: absolute;
+    animation-timing-function: linear;
+    animation-duration: 30s;
+    border-radius: 10px;
+    animation-iteration-count: infinite;
+  }
+  
+  .itemLeft {
+    left: max(calc(150px * 8), 100%);
+    animation-name: scrollLeft;
+  }
+  
+  .itemRight {
+    right: max(calc(150px * 8), calc(100% + 150px));
+    animation-name: scrollRight;
+  }
+
+  .wrapperslide {
+    z-index: 100;
+    margin-top: 2rem;
+    width: 90%;
+    max-width: 1536px;
+    margin-inline: auto;
+    height: 215px;
+    position: relative;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0));
+}
+
+}

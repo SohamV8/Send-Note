@@ -262,12 +262,13 @@ main {
   #video-container {
     width: 260px;
     height: 220px;
+    margin-left: 40px;
   }
 
   .word {
     font-size: 60px;
     line-height: 60px;
-    margin-left: 175px;
+    margin-left: 195px;
   }
   .word:nth-child(2){
     transform: translateX(10px);

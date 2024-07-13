@@ -65,10 +65,6 @@
   left: 50%;
 }
 
-.Homepagetry .animation6 {
-  top: 65%;
-  left: 30%;
-}
 
 .Homepagetry .animation7 {
   top: 60%;
@@ -85,10 +81,6 @@
   left: 80%;
 }
 
-.Homepagetry .animation10 {
-  top: 2%;
-  left: 35%;
-}
 
 .Homepagetry .animation11 {
   top: 5%;
@@ -177,6 +169,63 @@ svg {
 
   .gif-img {
     max-width: 100px;
+  }
+
+  #marker{
     display: none;
+  }
+
+  .Homepagetry .animation1 {
+    top: 50%;
+    left: 35%;
+  }
+  
+  .Homepagetry .animation2 {
+    top: 14%;
+    left: 65%;
+  }
+  
+  .Homepagetry .animation3 {
+    top: 70%;
+    left: 60%;
+  }
+  
+  .Homepagetry .animation4 {
+    top: 55%;
+    left: 85%;
+    width: 75px;
+  }
+  
+  .Homepagetry .animation5 {
+    top: 15%;
+    left: 30%;
+  }
+  
+  
+  .Homepagetry .animation7 {
+    top: 70%;
+    left: 15%;
+  }
+  
+  .Homepagetry .animation8 {
+    top: 15%;
+    left: -3%;
+  }
+  
+  .Homepagetry .animation9 {
+    top: 33%;
+    left: 85%;
+    width: 90px;
+  }
+    
+  .Homepagetry .animation11 {
+    top: 25%;
+    left: 88%;
+    width: 50px;
+  }
+  
+  .Homepagetry .animation12 {
+    top: 50%;
+    left: -1%;
   }
 }
