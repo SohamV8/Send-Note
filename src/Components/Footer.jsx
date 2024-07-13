@@ -1,7 +1,7 @@
 import React from 'react';
 import './Footer.css';
 import FINALPNG from '../assets/FINALPNG.png';
-import tornlast from '../assets/tornlast.png';
+import torntry1 from '../assets/torntry1.png';
 import Highlighter from './Highlighter';
 
 const Footer = () => {
@@ -12,7 +12,7 @@ const Footer = () => {
 
   return (
     <>
-      <img src={tornlast} alt='torn paper' className='last-torn' />
+      <img src={torntry1} alt='torn paper' className='last-torn' />
       <div className="paper">
         <Highlighter>
           <span className='foot'>Want to contribute?</span>

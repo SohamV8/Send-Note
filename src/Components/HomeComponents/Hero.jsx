@@ -15,21 +15,6 @@ import animation12 from '../../assets/12.gif';
 
 const Hero = () => {
   const elementsRef = useRef([]);
-  const spotlightRef = useRef(null);
-
-  const handleMouseMove = useCallback((event) => {
-    if (spotlightRef.current) {
-      const { clientX, clientY } = event;
-      spotlightRef.current.style.background = `radial-gradient(circle at ${clientX}px ${clientY}px, #121933 10px, #0b1020 350px)`;
-    }
-  }, []);
-
-  useEffect(() => {
-    document.addEventListener("mousemove", handleMouseMove);
-    return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, [handleMouseMove]);
 
   const gifs = [
     { className: 'animation1', animationData: animation1 },
@@ -71,7 +56,6 @@ const Hero = () => {
 
   return (
     <div className='Homepagetry'>
-      <div id="spotlight" ref={spotlightRef}></div>
       <div className="marking">
         <img className='hero-img' src={FINALPNG} alt="Hero" />
         <svg id='marker' width="600" height="221" viewBox="0 0 558 206" fill="none" xmlns="http://www.w3.org/2000/svg">

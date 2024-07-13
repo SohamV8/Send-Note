@@ -1,21 +1,86 @@
-@import url('https://fonts.googleapis.com/css2?family=Aladin&family=Lobster&family=Mouse+Memoirs&display=swap');
-
-.Feat {
+.FeatureContainer {
   position: relative;
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 150vh;
   width: 100%;
+  height: 160vh;
 }
 
-img.Feat-img {
-  width: 80%;
+img.last-torn-feat {
   height: auto;
   z-index: 1;
   position: relative;
+  width: 100%;
+  margin-top: -120px;
 }
+
+.SparklesPreview {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-top: -175x;
+}
+
+.F-Title, .F-SubTitle {
+  position: relative;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 10px; /* Reduced margin */
+  z-index: 1; /* Ensure text is above particles */
+}
+
+h1.F-Title{
+  font-size: 56px;
+}
+
+h3.F-SubTitle{
+font-size: 36px;
+}
+
+.gradient-line {
+  position: relative;
+  width: 80%;
+  height: 2px;
+  margin: 0 auto;
+  background: linear-gradient(to right, transparent, #ffffff, transparent); /* Adjust gradient colors as needed */
+  z-index: 2; /* Ensure gradient line is above particles */
+}
+
+.sparkles-container {
+  position: absolute;
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0));
+  top: calc(45% + 10px); /* Adjusted position to reduce gap */
+  left: 0;
+  width: 100%;
+  height: 50%; /* Adjusted height */
+  overflow: hidden;
+}
+
+.sparkles-text {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+}
+
+.Feat {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.Feat-img {
+width: 80%;
+height: auto;
+margin: auto;
+}
+
 
 .TEXT-FEAT {
   display: flex;
@@ -25,87 +90,6 @@ img.Feat-img {
   text-align: center;
   position: relative;
   color: #ffffff;
-  margin-top: 20px;
+  margin-top: 10px; /* Reduced margin */
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);
-}
-
-h1.F-Title,
-h3.F-SubTitle {
-  position: relative;
-  font-family: "Aladin", system-ui;
-  color: #00ADB5;
-  font-size: 64px;
-  overflow: hidden; /* Ensure the overflow is hidden for the glitch effect */
-}
-
-h1.F-Title:hover,
-h3.F-SubTitle:hover {
-  text-shadow: 0.05em 0 0 #ec2225, -0.025em -0.05em 0 #313f97, 0.025em 0.05em 0 #50c878;
-  color: rgba(0, 194, 203, 0.2);
-}
-
-h1.F-Title:before,
-h1.F-Title:after,
-h3.F-SubTitle:before,
-h3.F-SubTitle:after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  margin: auto;
-  opacity: 0.8;
-}
-
-h1.F-Title:hover::before,
-h3.F-SubTitle:hover::before {
-  animation: glitch 650ms infinite;
-  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
-  transform: translate(-0.025em, -0.0125em) translateX(-50%);
-}
-
-h1.F-Title:hover::after,
-h3.F-SubTitle:hover::after {
-  animation: glitch 375ms infinite;
-  clip-path: polygon(0 65%, 100% 20%, 100% 100%, 0 70%);
-  transform: translate(0.0125em, 0.025em) translateX(-50%);
-}
-
-@keyframes glitch {
-  0% {
-    color: rgba(236, 34, 37, 0.2);
-    text-shadow: 0.05em 0 0 #ec2225, -0.025em -0.05em 0 #313f97, 0.025em 0.05em 0 #50c878;
-  }
-  14% {
-    text-shadow: 0.05em 0 0 #ec2225, -0.025em -0.05em 0 #313f97, 0.025em 0.05em 0 #50c878;
-  }
-  15% {
-    color: #50c878;
-    text-shadow: -0.05em -0.025em 0 #ec2225, 0.025em -0.025em 0 #313f97, -0.05em -0.05em 0 #50c878;
-  }
-  49% {
-    text-shadow: -0.05em -0.025em 0 #ec2225, 0.025em -0.025em 0 #313f97, -0.05em -0.05em 0 #50c878;
-  }
-  50% {
-    text-shadow: 0.025em 0.05em 0 #ec2225, -0.025em 0.05em 0 #313f97, 0 -0.05em 0 #50c878;
-  }
-  99% {
-    color: #313f97;
-    text-shadow: 0.025em 0.05em 0 #ec2225, -0.025em 0.05em 0 #313f97, 0 -0.05em 0 #50c878;
-  }
-  100% {
-    text-shadow: -0.025em 0 0 #ec2225, -0.025em -0.025em 0 #313f97, -0.025em -0.05em 0 #50c878;
-  }
-}
-
-h3.F-SubTitle {
-  font-size: 36px;
-  font-family: "Lobster", sans-serif;
-  color: #00ADB5;
-}
-
-img.last-torn-feat {
-  height: auto;
-  z-index: 1;
-  margin-top: -120px;
-  position: relative;
-  width: 100%;
 }
