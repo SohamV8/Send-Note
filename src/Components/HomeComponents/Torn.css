@@ -260,11 +260,14 @@ main {
 
 @media (max-width: 450px) {
   #video-container {
-    width: 260px;
-    height: 220px;
+    width: 300px;
+    height: 254px;
     margin-left: 40px;
   }
-
+  .Apptorn {
+    width: auto;
+    height: 70vh;
+  }
   .word {
     font-size: 60px;
     line-height: 60px;
@@ -274,7 +277,7 @@ main {
     transform: translateX(10px);
   }
   #redirect-button {
-    left: 50%;
+    left: 60%;
     bottom: 25%;
     width: 110px;
   }

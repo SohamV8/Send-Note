@@ -41,8 +41,8 @@
 }
 
 .Homepagetry .animation1 {
-  top: 20%;
-  left: 15%;
+  top: 0%;
+  left: 25%;
 }
 
 .Homepagetry .animation2 {
@@ -68,7 +68,7 @@
 
 .Homepagetry .animation7 {
   top: 60%;
-  left: 10%;
+  left: 30%;
 }
 
 .Homepagetry .animation8 {
@@ -77,19 +77,18 @@
 }
 
 .Homepagetry .animation9 {
-  top: 20%;
-  left: 80%;
+  top: 40%;
+  left: 15%;
 }
 
-
 .Homepagetry .animation11 {
-  top: 5%;
-  left: 92%;
+  top: 10%;
+  left: 89%;
 }
 
 .Homepagetry .animation12 {
   top: 50%;
-  left: -3%;
+  left: -2%;
 }
 
 svg {

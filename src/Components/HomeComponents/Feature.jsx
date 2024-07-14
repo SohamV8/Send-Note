@@ -10,8 +10,8 @@ function Feature() {
       <img src={tornlast} alt='torn paper' className='last-torn-feat' />
       <div className="FeatureContainer">
         <div className="SparklesPreview">
-          <h1 className='F-Title' data-text="WE GOT EVERYTHING COVER FOR YOU">WE GOT EVERYTHING COVER FOR YOU</h1>
-          <h3 className='F-SubTitle' data-text="Everything Everywhere All at Once">Everything Everywhere All at Once</h3>
+          <h1 className='F-Title glitch' data-text="WE GOT EVERYTHING COVER FOR YOU">WE GOT EVERYTHING COVER FOR YOU</h1>
+          <h3 className='F-SubTitle glitch' data-text="Everything Everywhere All at Once">Everything Everywhere All at Once</h3>
           <div className="gradient-line"></div>
           <div className="sparkles-container">
             <SparklesCore
