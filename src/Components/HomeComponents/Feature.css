@@ -22,7 +22,6 @@ img.last-torn-feat {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
   margin-top: -175px;
 }
 
@@ -31,7 +30,7 @@ img.last-torn-feat {
   color: #ffffff;
   text-align: center;
   margin-bottom: 10px; /* Reduced margin */
-  z-index: 1; /* Ensure text is above particles */
+  z-index: 2; /* Ensure text is above particles */
 }
 
 h1.F-Title {
@@ -55,12 +54,13 @@ h3.F-SubTitle {
 
 .sparkles-container {
   position: absolute;
-  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0));
-  top: calc(45% + 10px); /* Adjusted position to reduce gap */
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0));
+  top: calc(50% + 10px); /* Adjusted position to reduce gap */
   left: 0;
+  margin-top: 60px;
   width: 100%;
-  height: 50%; /* Adjusted height */
-  overflow: hidden;
+  height: 60%; /* Increased height */
+  z-index: 1; /* Ensure particles are below text and gradient line */
 }
 
 .sparkles-text {
