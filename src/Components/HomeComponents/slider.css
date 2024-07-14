@@ -2,11 +2,10 @@
 
 
 .sliding{
-
   background-color:  #0b1020;
-
   backdrop-filter: blur(8vmax);
   -webkit-backdrop-filter: blur(8vmax);
+  display: contents;
 }
 
 .wrapperslide {

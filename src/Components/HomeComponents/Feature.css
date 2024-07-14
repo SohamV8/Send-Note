@@ -149,7 +149,7 @@ h3.F-SubTitle {
   }
 
   img.last-torn-feat {
-    margin-top: -30px;
+    margin-top: 60px;
   }
 
   .Feat-img {
@@ -161,6 +161,10 @@ h3.F-SubTitle {
     margin-top: 180px;
     margin-bottom: -50px;
   }
+  .sparkles-container{
+    margin-top: 110px;
+  }
+
 }
 
 /* Glitch animation */

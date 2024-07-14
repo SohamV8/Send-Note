@@ -79,7 +79,8 @@
 /* Media query for responsive design */
 @media (max-width: 450px) {
   .sidebar {
-    width: 130px; /* Collapse sidebar width on smaller screens */
+    width: 130px; 
+    margin-left: -6px;
   }
   .sidebar.toggled {
     width: 240px; /* Expanded sidebar width when toggled */

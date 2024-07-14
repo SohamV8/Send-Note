@@ -3,6 +3,7 @@
   height: 100vh;
   position: relative;
   background: #000;
+  display: contents;
 }
 
 img.torn {
@@ -207,7 +208,7 @@ img.torn {
   }
 
   .containerbtn {
-    margin-top: -250px;
+    margin-top: -200px;
   }
 
   img.torn{
