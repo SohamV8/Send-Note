@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+.pyqtest {
+  overflow: hidden;
+    height: 100vh;
+    width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  background-color:  #0b1020;
+}
+
+.how-to-stay-on-top {
+  font-family: 'Indie Flower', 'Patrick Hand SC', 'Comic Neue', 'Comic Sans', 'Comic Sans MS', Helvetica, Arial, sans-serif;
+  font-size: 5vmin;
+  background: white;
+  padding: 2em 2em 2em 3em;
+  width: 85vmin;
+  height: 110vmin;
+  background:
+    radial-gradient(circle at 0.4em 50%, #000 0.125em, #0000 0.135em) 0 0 / 100% 3vmin repeat-y,
+    linear-gradient(90deg, #0000 2.35em, #fbb 0 2.4em, #0000 0),
+    repeating-linear-gradient(#0000 0 5%, #99f 0 5.1%) 100% 50% / calc(100% - 2.35em) 82% no-repeat,
+    #eee;
+  border-radius: 0.05em;
+  box-shadow:
+    0.1em 0.1em #ddd,
+    0.065em 0.05em #fff,
+    0.15em 0.15em #bbb,
+    0.125em 0 0 0.15em #333,
+    0.25em 0.125em 0 0.15em #000;
+  transform: rotate(3deg) translate(5%, 5%);
+  transform-origin: 10% 10%;
+  position: relative;
+  filter: drop-shadow(-0.25vmin 0.1em 0.35vmin #0002) drop-shadow(1vmin 0 1vmin #0003);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -1em;
+    width: 1.5em;
+    height: 100%;
+    background:
+      linear-gradient(#0000 0.225em, #999 0 0.375em, #0000 0) 80% 0 / 68% 3vmin repeat-y,
+      linear-gradient(25deg, #0000 0.225em, #666 0 0.35em, #0000 0) 44% 0.1% / 40% 3vmin repeat-y,
+      radial-gradient(circle at 0.4em 50%, #999 0.075em, #0000 0.085em) 0 0 / 100% 3vmin repeat-y,
+      radial-gradient(circle at 1.4em 50%, #999 0.075em, #0000 0.085em) 0 0 / 100% 3vmin repeat-y,
+      #f000;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -1em;
+    width: 1.5em;
+    height: 100%;
+    background:
+      linear-gradient(#0000 0.225em, #fff7 0 0.375em, #0000 0) 80% 0 / 68% 3vmin repeat-y;
+    mask:
+      linear-gradient(90deg, #0000 0.4em, #000 0.6em, #0000 1.2em),
+      linear-gradient(#0000 0.225em, #fff7 0.28em 0.3em, #0000 0.375em) 80% 0 / 68% 3vmin repeat-y;
+    mask-composite: intersect;
+  }
+}
+
+h2.tryNot {
+  margin: 0;
+  font-size: 6.5vmin;
+  white-space: pre;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 95%;
+    height: 100%;
+    background: #f003;
+    background: radial-gradient(175% 100% at 50% 100%, #0000 50%, #000 51% 55%, #0000 56%);
+    left: -1%;
+    top: 25%;
+    transform: rotate(0.25deg)
+  }
+}
+
+del {
+  text-decoration-color: #f00c;
+}
+
+u {
+  text-decoration: none;
+  transform: rotate(-2deg) skew(-2deg);
+  position: relative;
+  display: inline-block;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 95%;
+    height: 100%;
+    background: #f003;
+    background: radial-gradient(195% 100% at 50% 100%, #0000 50%, #000 51% 55%, #0000 56%);
+    left: -1%;
+    top: 30%;
+    transform: rotate(0.25deg)
+  }
+
+  &::before {
+    transform: rotate(1.5deg);
+    left: 2%;
+    top: 40%;
+  }
+}
+
+ol {
+  line-height: 5.4vmin;
+  margin-top: 4.25vmin;
+}

@@ -7,6 +7,7 @@ import Torn from '../Components/HomeComponents/Torn';
 import AI from '../Components/HomeComponents/AI';
 import Footer from '../Components/Footer';
 import Feature from '../Components/HomeComponents/Feature';
+import TryNote from '../Components/HomeComponents/TryNote';
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <Hero />
       <Slider />
       <Torn />
+      <TryNote />
       <AI />
       <Feature />
       <Footer />

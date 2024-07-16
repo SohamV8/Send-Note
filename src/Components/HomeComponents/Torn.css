@@ -38,38 +38,18 @@
   transform: rotate(0);
   user-select: none;
   display: flex;
-  transition: transform 1s ease-out;
+  justify-content: center; /* Ensure items are centered horizontally */
+  align-items: center; /* Ensure items are centered vertically */
+  height: 80%; /* Adjust height to fit items properly */
+  width: 100%; /* Ensure items cover the entire width */
 }
 
 .item-pyq {
   position: absolute;
   user-select: none;
   cursor: pointer;
-  transform: translateX(-50%);
+  transform: translate(-50%);
   transition: transform 1s ease-out, opacity 1s ease-out;
-}
-
-.card-pyq {
-  display: block;
-  width: 300px;
-  height: 423px;
-  color: #fff;
-  user-select: none;
-  border-radius: 17px;
-  overflow: hidden;
-  cursor: grab;
-  position: relative;
-  border: 10px solid black;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card-pyq:active {
-  cursor: grabbing;
-}
-
-.card-pyq:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .image-pyq {
@@ -82,22 +62,4 @@
   filter: grayscale(100%);
   pointer-events: none;
   transition: filter 0.3s ease;
-}
-
-.card-pyq:hover .image-pyq {
-  filter: grayscale(0%);
-}
-
-@media screen and (max-height: 1000px) {
-  .card-pyq {
-    width: 350px;
-    height: 497px;
-  }
-}
-
-@media screen and (max-height: 800px) {
-  .card-pyq {
-    width: 300px;
-    height: 400px;
-  }
 }
