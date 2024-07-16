@@ -39,27 +39,28 @@ const Torn = () => {
       const timeline = gsap.timeline();
 
       items.forEach((item, index) => {
-        const sign = Math.floor((index / 2) % 2) ? 1 : -1;
+        const sign = index % 2 === 0 ? 1 : -1;
         const value = Math.floor((index + 4) / 4) * 4;
         const rotation = index > imageSize - 3 ? 0 : sign * value;
 
         gsap.set(item, {
           rotation: rotation,
           scale: 0.8,
-          transformOrigin: 'center', // Set transform origin to center for proper rotation
+          transformOrigin: 'center center', // Set transform origin to center for proper rotation
         });
 
+        // Adjusted initial animation to center items properly
         timeline.from(
           item,
           {
-            x: index % 2 ? window.innerWidth + item.offsetWidth * 4 : -window.innerWidth - item.offsetWidth * 4,
-            y: window.innerHeight - item.offsetHeight,
-            rotation: index % 2 ? 200 : -200,
-            scale: 4,
+            x: 0,
+            y: 0,
+            rotation: 0,
+            scale: 1,
             opacity: 1,
             ease: 'power4.out',
             duration: 1,
-            delay: 0.15 * Math.floor(index / 2),
+            delay: 0.15 * index,
           },
           0
         );
@@ -69,7 +70,7 @@ const Torn = () => {
           item,
           {
             motionPath: {
-              path: { x: 100, y: 100, curvature: 1.5, autoRotate: true },
+              path: { x: 0, y: 0, curvature: 1.5, autoRotate: true },
               align: 'self', // Align the item to its path
               immediateRender: false,
             },
@@ -83,7 +84,7 @@ const Torn = () => {
     };
 
     const draggable = () => {
-      Draggable.create('.items-pyq', {
+      Draggable.create(items, {
         type: 'rotation',
         throwResistance: 10000, // Increase throw resistance for smoother drag
       });
