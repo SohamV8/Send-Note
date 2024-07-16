@@ -1,27 +1,38 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect, useRef } from 'react';
 import './Torn.css';
 import { gsap } from 'gsap';
 import { Draggable } from 'gsap/Draggable';
+import { MotionPathPlugin } from 'gsap/MotionPathPlugin'; // Import MotionPathPlugin for circular motion
+import image1 from '../../assets/image1.png';
+import image2 from '../../assets/image2.png';
+import image3 from '../../assets/image3.png';
+import image4 from '../../assets/image4.png';
+import image5 from '../../assets/image5.png';
+import image6 from '../../assets/image6.png';
+import image7 from '../../assets/image7.png';
+import image8 from '../../assets/image8.png';
+import image9 from '../../assets/image9.png';
 
-// Define images array with correct import paths
+gsap.registerPlugin(Draggable, MotionPathPlugin); // Register MotionPathPlugin
+
 const images = [
-  require('../../assets/image1.png').default,
-  require('../../assets/image2.png').default,
-  require('../../assets/image3.png').default,
-  require('../../assets/image4.png').default,
-  require('../../assets/image5.png').default,
-  require('../../assets/image6.png').default,
-  require('../../assets/image7.png').default,
-  require('../../assets/image8.png').default,
-  require('../../assets/image9.png').default
+  image1,
+  image2,
+  image3,
+  image4,
+  image5,
+  image6,
+  image7,
+  image8,
+  image9
 ];
 
-gsap.registerPlugin(Draggable);
-
 const Torn = () => {
+  const itemsRef = useRef([]);
+
   useEffect(() => {
-    const items = gsap.utils.toArray('.item-pyq');
-    const imageSize = items.length;
+    const items = itemsRef.current;
+    const imageSize = images.length;
     const degree = 360 / imageSize;
 
     const init = () => {
@@ -34,17 +45,15 @@ const Torn = () => {
 
         gsap.set(item, {
           rotation: rotation,
-          scale: 0.5,
+          scale: 0.8,
+          transformOrigin: 'center', // Set transform origin to center for proper rotation
         });
 
         timeline.from(
           item,
           {
-            x: () =>
-              index % 2
-                ? window.innerWidth + item.clientWidth * 4
-                : -window.innerWidth - item.clientWidth * 4,
-            y: () => window.innerHeight - item.clientHeight,
+            x: index % 2 ? window.innerWidth + item.offsetWidth * 4 : -window.innerWidth - item.offsetWidth * 4,
+            y: window.innerHeight - item.offsetHeight,
             rotation: index % 2 ? 200 : -200,
             scale: 4,
             opacity: 1,
@@ -55,71 +64,36 @@ const Torn = () => {
           0
         );
 
-        let rotationAngle = index * degree;
+        // Use MotionPathPlugin for circular motion
         timeline.to(
           item,
           {
-            scale: 1,
-            duration: 0,
+            motionPath: {
+              path: { x: 100, y: 100, curvature: 1.5, autoRotate: true },
+              align: 'self', // Align the item to its path
+              immediateRender: false,
+            },
+            duration: 4, // Adjust duration as needed
+            ease: 'none',
+            repeat: -1, // Infinite repeat for continuous rotation
           },
-          0.15 * (imageSize / 2 - 1) + 1
-        );
-
-        timeline.to(
-          item,
-          {
-            transformOrigin: 'center 200vh',
-            rotation:
-              index > imageSize / 2 ? -degree * (imageSize - index) : rotationAngle,
-            duration: 1,
-            ease: 'power1.out',
-          },
-          0.15 * (imageSize / 2 - 1) + 1
+          0
         );
       });
     };
 
     const draggable = () => {
-      let start = 0;
       Draggable.create('.items-pyq', {
         type: 'rotation',
-
-        onDragStart: function () {
-          start = this.rotation;
-        },
-        onDragEnd: function () {
-          const rotation = this.rotation;
-          const offset = Math.abs(rotation - start);
-          if (rotation > start) {
-            if (rotation - start < degree / 2) {
-              gsap.to('.items-pyq', {
-                rotation: `-=${offset}`,
-              });
-            } else {
-              gsap.to('.items-pyq', {
-                rotation: `+=${2 * degree - offset}`,
-              });
-            }
-          } else {
-            if (Math.abs(rotation - start) < degree / 2) {
-              gsap.to('.items-pyq', {
-                rotation: `+=${offset}`,
-              });
-            } else {
-              gsap.to('.items-pyq', {
-                rotation: `-=${2 * degree - offset}`,
-              });
-            }
-          }
-        },
+        throwResistance: 10000, // Increase throw resistance for smoother drag
       });
     };
 
-    init();
-    draggable();
+    if (items.length > 0) {
+      init();
+      draggable();
+    }
   }, []);
-
-  const imageSources = useMemo(() => images, []);
 
   return (
     <main>
@@ -129,8 +103,8 @@ const Torn = () => {
       </div>
       <div className="container-pyq">
         <div className="center-pyq">
-          <div className="items-pyq">
-            {imageSources.map((src, index) => (
+          <div className="items-pyq" ref={itemsRef}>
+            {images.map((src, index) => (
               <div className="item-pyq" key={index}>
                 <div className="card-pyq">
                   <img className="image-pyq" src={src} alt={`Image ${index + 1}`} loading="lazy" />
