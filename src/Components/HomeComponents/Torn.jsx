@@ -1,169 +1,147 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import './Torn.css';
 import { gsap } from 'gsap';
-import { Link } from 'react-router-dom';
-import protitle from '../../assets/protitle.mp4';
+import { Draggable } from 'gsap/Draggable';
 
-function Torn() {
-  const blobRef = useRef(null);
-  const videoContainerRef = useRef(null);
+// Define images array with correct import paths
+const images = [
+  require('../../assets/image1.png').default,
+  require('../../assets/image2.png').default,
+  require('../../assets/image3.png').default,
+  require('../../assets/image4.png').default,
+  require('../../assets/image5.png').default,
+  require('../../assets/image6.png').default,
+  require('../../assets/image7.png').default,
+  require('../../assets/image8.png').default,
+  require('../../assets/image9.png').default
+];
 
+gsap.registerPlugin(Draggable);
+
+const Torn = () => {
   useEffect(() => {
-    const handleMouseMove = (mouseEvent) => {
-      const { clientX, clientY } = mouseEvent;
+    const items = gsap.utils.toArray('.item-pyq');
+    const imageSize = items.length;
+    const degree = 360 / imageSize;
 
-      if (blobRef.current) {
-        blobFollowMouse(clientX, clientY);
-      }
+    const init = () => {
+      const timeline = gsap.timeline();
 
-      if (videoContainerRef.current) {
-        const rect = videoContainerRef.current.getBoundingClientRect();
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
-        const distanceX = (clientX - centerX) / rect.width;
-        const distanceY = (clientY - centerY) / rect.height;
+      items.forEach((item, index) => {
+        const sign = Math.floor((index / 2) % 2) ? 1 : -1;
+        const value = Math.floor((index + 4) / 4) * 4;
+        const rotation = index > imageSize - 3 ? 0 : sign * value;
 
-        rotateVideo3D(distanceX, distanceY);
-      }
+        gsap.set(item, {
+          rotation: rotation,
+          scale: 0.5,
+        });
+
+        timeline.from(
+          item,
+          {
+            x: () =>
+              index % 2
+                ? window.innerWidth + item.clientWidth * 4
+                : -window.innerWidth - item.clientWidth * 4,
+            y: () => window.innerHeight - item.clientHeight,
+            rotation: index % 2 ? 200 : -200,
+            scale: 4,
+            opacity: 1,
+            ease: 'power4.out',
+            duration: 1,
+            delay: 0.15 * Math.floor(index / 2),
+          },
+          0
+        );
+
+        let rotationAngle = index * degree;
+        timeline.to(
+          item,
+          {
+            scale: 1,
+            duration: 0,
+          },
+          0.15 * (imageSize / 2 - 1) + 1
+        );
+
+        timeline.to(
+          item,
+          {
+            transformOrigin: 'center 200vh',
+            rotation:
+              index > imageSize / 2 ? -degree * (imageSize - index) : rotationAngle,
+            duration: 1,
+            ease: 'power1.out',
+          },
+          0.15 * (imageSize / 2 - 1) + 1
+        );
+      });
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
+    const draggable = () => {
+      let start = 0;
+      Draggable.create('.items-pyq', {
+        type: 'rotation',
 
-    // Initial animations
-    titleSlideIn();
-    videoPopIn();
-    blobRotate();
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+        onDragStart: function () {
+          start = this.rotation;
+        },
+        onDragEnd: function () {
+          const rotation = this.rotation;
+          const offset = Math.abs(rotation - start);
+          if (rotation > start) {
+            if (rotation - start < degree / 2) {
+              gsap.to('.items-pyq', {
+                rotation: `-=${offset}`,
+              });
+            } else {
+              gsap.to('.items-pyq', {
+                rotation: `+=${2 * degree - offset}`,
+              });
+            }
+          } else {
+            if (Math.abs(rotation - start) < degree / 2) {
+              gsap.to('.items-pyq', {
+                rotation: `+=${offset}`,
+              });
+            } else {
+              gsap.to('.items-pyq', {
+                rotation: `-=${2 * degree - offset}`,
+              });
+            }
+          }
+        },
+      });
     };
+
+    init();
+    draggable();
   }, []);
 
-  // GSAP Animations
-  const blobRotate = () => {
-    gsap.timeline({ repeat: -1, ease: 'none' })
-      .to(blobRef.current, { rotation: 180, scaleX: 1.6 })
-      .to(blobRef.current, { rotation: 360, scaleX: 1 })
-      .totalDuration(17)
-      .play();
-  };
-
-  const blobFollowMouse = (x, y) => {
-    const maxX = window.innerWidth - blobRef.current.offsetWidth / 2;
-    const maxY = window.innerHeight - blobRef.current.offsetHeight / 2;
-    const boundedX = Math.min(Math.max(x, blobRef.current.offsetWidth / 2), maxX);
-    const boundedY = Math.min(Math.max(y, blobRef.current.offsetHeight / 2), maxY);
-    gsap.to(blobRef.current, {
-      left: boundedX,
-      top: boundedY,
-      duration: 2,
-    });
-  };
-
-  const rotateVideo3D = (distanceX, distanceY) => {
-    gsap.to(videoContainerRef.current, {
-      rotateX: -20 * distanceY,
-      rotateY: 20 * distanceX,
-      duration: 0.5,
-      ease: 'power1.out',
-    });
-  };
-
-  const videoPopIn = () => {
-    gsap.fromTo(videoContainerRef.current, { scale: 0 }, {
-      scale: 1,
-      ease: 'elastic.out(1, 0.8)',
-      duration: 0.8,
-      delay: 0.4,
-    });
-  };
-
-  const titleSlideIn = () => {
-    document.querySelectorAll('.word').forEach((word, wordIdx) => {
-      Array.from(word.children).forEach((char, charIdx) => {
-        gsap.fromTo(char, {
-          opacity: 0,
-          x: 0,
-        }, {
-          opacity: 1,
-          x: -30,
-          ease: 'elastic.out(1.1, 0.7)',
-          duration: 1.2,
-          delay: wordIdx * 0.2 + charIdx * 0.03,
-        });
-      });
-    });
-  };
+  const imageSources = useMemo(() => images, []);
 
   return (
-    <div className="Apptorn">
-
-      <section id="background-torn">
-        <div id="blob" ref={blobRef}></div>
-        <div id="blur"></div>
-      </section>
-
-      <main>
-        <div id="video-container" ref={videoContainerRef}>
-          <video
-            poster=""
-            src={protitle}
-            muted
-            autoPlay
-            loop
-            playsInline
-          ></video>
+    <main>
+      <div className="text-pyq">
+        <h1 className='h1pyq'>NO TENSION DURING EXAMS</h1>
+        <h3 className='h3pyq'>Best Question Paper To Practice</h3>
+      </div>
+      <div className="container-pyq">
+        <div className="center-pyq">
+          <div className="items-pyq">
+            {imageSources.map((src, index) => (
+              <div className="item-pyq" key={index}>
+                <div className="card-pyq">
+                  <img className="image-pyq" src={src} alt={`Image ${index + 1}`} loading="lazy" />
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-
-        <div id="title-torn">
-          <span className="word">
-            <span className="char">N</span>
-            <span className="char">o</span>
-          </span>
-          <span className="word">
-            <span className="char">T</span>
-            <span className="char">e</span>
-            <span className="char">n</span>
-            <span className="char">s</span>
-            <span className="char">i</span>
-            <span className="char">o</span>
-            <span className="char">n</span>
-          </span>
-          <span className="word">
-            <span className="char">D</span>
-            <span className="char">u</span>
-            <span className="char">r</span>
-            <span className="char">i</span>
-            <span className="char">n</span>
-            <span className="char">g</span>
-          </span>
-          <span className="word">
-            <span className="char">E</span>
-            <span className="char">x</span>
-            <span className="char">a</span>
-            <span className="char">m</span>
-            <span className="char">s</span>
-          </span>
-        </div>
-
-        <Link to="/PYQ">
-          <button id="redirect-button">
-            <span className="button-bg">
-              <span className="button-bg-layers">
-                <span className="button-bg-layer button-bg-layer-1 -yellow"></span>
-                <span className="button-bg-layer button-bg-layer-2 -turquoise"></span>
-                <span className="button-bg-layer button-bg-layer-3 -purple"></span>
-              </span>
-            </span>
-            <span className="button-inner">
-              <span className="button-inner-static">PYQ</span>
-              <span className="button-inner-hover">PYQ</span>
-            </span>
-          </button>
-        </Link>
-      </main>
-    </div>
+      </div>
+    </main>
   );
-}
+};
 
 export default Torn;
