@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './try.css';
 
 const TryNote = () => {
@@ -15,9 +16,15 @@ const TryNote = () => {
           <li><u>FOCUS</u>: Don't multitask</li>
           <li><del>z-index: 4;</del></li>
           <li><del>z-index: 9999;</del></li>
-          <li><del>z-index: 999999999;</del></li>
-          <li>z-index: max(infinity);</li>
         </ol>
+        <Link to="/PYQ">
+          <button className="learn-more">
+            <span className="circle">
+              <span className="icon arrow"></span>
+            </span>
+            <span className="button-text">PYQ</span>
+          </button>
+        </Link>
       </article>
     </div>
   );
