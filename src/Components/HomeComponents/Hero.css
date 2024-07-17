@@ -228,3 +228,71 @@ svg {
     left: -1%;
   }
 }
+
+@media (min-width: 768px) and (max-width: 1300px) {
+  .hero-img {
+    width: 300px;
+  }
+
+  .gif-img {
+    max-width: 150px;
+  }
+
+  #marker{
+    display: none;
+  }
+
+  .Homepagetry .animation1 {
+    top: 60%;
+    left: 35%;
+  }
+  
+  .Homepagetry .animation2 {
+    top: 14%;
+    left: 65%;
+  }
+  
+  .Homepagetry .animation3 {
+    top: 70%;
+    left: 60%;
+  }
+  
+  .Homepagetry .animation4 {
+    top: 60%;
+    left: 85%;
+    width: 120px;
+  }
+  
+  .Homepagetry .animation5 {
+    top: 10%;
+    left: 28%;
+  }
+  
+  
+  .Homepagetry .animation7 {
+    top: 70%;
+    left: 15%;
+  }
+  
+  .Homepagetry .animation8 {
+    top: 15%;
+    left: -3%;
+  }
+  
+  .Homepagetry .animation9 {
+    top: 33%;
+    left: 85%;
+    width: 130px;
+  }
+    
+  .Homepagetry .animation11 {
+    top: 15%;
+    left: 85%;
+    width: 100px;
+  }
+  
+  .Homepagetry .animation12 {
+    top: 50%;
+    left: -1%;
+  }
+}
