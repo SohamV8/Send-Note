@@ -9,6 +9,25 @@
   background-color:  #0b1020;
 }
 
+.right-pyq{
+color: white;
+margin: auto;
+float: right;
+}
+
+.left-pyq{
+  float: left;
+  margin: auto;
+}
+
+.tension{
+font-size: 48px;
+}
+
+.sub-pyq{
+
+}
+
 .how-to-stay-on-top {
   font-family: 'Indie Flower', 'Patrick Hand SC', 'Comic Neue', 'Comic Sans', 'Comic Sans MS', Helvetica, Arial, sans-serif;
   font-size: 5vmin;

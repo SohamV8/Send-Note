@@ -23,6 +23,7 @@ const TryNote = () => {
       </div>
       <div className="right-pyq">
         <h1 className='tension'>NO TENSION DURING EXAMS</h1>
+        <h3 className='sub-pyq'>Get a wide range of question paper from previous year</h3>
               <Link to="/PYQ">
           <button className="learn-more">
             <span className="circle">
