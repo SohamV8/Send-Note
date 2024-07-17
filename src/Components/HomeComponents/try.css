@@ -223,3 +223,53 @@ button.learn-more:active {
   -moz-transition: box-shadow 0.2s ease-in;
   transition: box-shadow 0.2s ease-in;
 }
+
+@media (max-width: 768px) {
+  .pyqtest {
+    flex-direction: column;
+  }
+
+  .left-pyq {
+    max-width: 90%;
+    text-align: center;
+    margin: 10px auto;
+  }
+
+  .right-pyq {
+    max-width: 90%;
+    text-align: center;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    order: 1; /* Ensures right-pyq comes first */
+  }
+
+  .left-pyq {
+    order: 2; /* Ensures left-pyq comes second */
+  }
+
+  .tension {
+    font-size: 48px;
+  }
+
+  .sub-pyq {
+    font-size: 20px;
+  }
+
+  .how-to-stay-on-top {
+    font-size: 4vmin;
+    width: 90%;
+    height: auto;
+    transform: rotate(0deg) translate(0%, 0%);
+  }
+
+  h2.tryNot {
+    font-size: 5vmin;
+  }
+
+  ol {
+    line-height: 4vmin;
+  }
+}
