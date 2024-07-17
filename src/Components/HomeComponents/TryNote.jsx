@@ -5,6 +5,7 @@ import './try.css';
 const TryNote = () => {
   return (
     <div className="pyqtest">
+      <div className="left-pyq">
       <article className="how-to-stay-on-top">
         <h2 className='tryNot'>How to stay on top of things:</h2>
         <ol>
@@ -17,7 +18,12 @@ const TryNote = () => {
           <li><del>z-index: 4;</del></li>
           <li><del>z-index: 9999;</del></li>
         </ol>
-        <Link to="/PYQ">
+
+      </article>
+      </div>
+      <div className="right-pyq">
+        <h1 className='tension'>NO TENSION DURING EXAMS</h1>
+              <Link to="/PYQ">
           <button className="learn-more">
             <span className="circle">
               <span className="icon arrow"></span>
@@ -25,7 +31,7 @@ const TryNote = () => {
             <span className="button-text">PYQ</span>
           </button>
         </Link>
-      </article>
+    </div>
     </div>
   );
 };
