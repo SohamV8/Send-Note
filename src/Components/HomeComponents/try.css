@@ -276,29 +276,16 @@ button.learn-more:active {
 
 
 @media (min-width: 768px) and (max-width: 1300px) {
-  .pyqtest {
-    flex-direction: column;
-  }
-
-  .left-pyq {
-    max-width: 90%;
-    text-align: center;
-    margin: 10px auto;
-  }
-
   .right-pyq {
     max-width: 90%;
     text-align: center;
     margin: 10px auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
-    order: 1; /* Ensures right-pyq comes first */
   }
 
   .left-pyq {
-    order: 2; /* Ensures left-pyq comes second */
+    margin-top: 160px;
+    max-width: 90%;
+    text-align: center;
   }
 
   .tension {
