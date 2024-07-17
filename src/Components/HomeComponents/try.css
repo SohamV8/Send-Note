@@ -61,9 +61,11 @@ font-family: "Playwrite HR Lijeva", cursive;
   transform-origin: 10% 10%;
   position: relative;
   filter: drop-shadow(-0.25vmin 0.1em 0.35vmin #0002) drop-shadow(1vmin 0 1vmin #0003);
-
+  word-wrap: break-word; /* Ensure words wrap inside the notebook */
+  overflow-wrap: break-word; /* Ensure words wrap inside the notebook */
+  
   &::before {
-    content: "";
+    content: " ";
     position: absolute;
     top: 0;
     left: -1em;
@@ -78,7 +80,7 @@ font-family: "Playwrite HR Lijeva", cursive;
   }
 
   &::after {
-    content: "";
+    content: " ";
     position: absolute;
     top: 0;
     left: -1em;
@@ -94,8 +96,8 @@ font-family: "Playwrite HR Lijeva", cursive;
 }
 
 h2.tryNot {
-  margin: 0;
-  font-size: 6.5vmin;
+  margin-left: -25px;
+  font-size: 6vmin;
   white-space: pre;
   position: relative;
 
