@@ -136,7 +136,7 @@ h3.F-SubTitle {
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);
 }
 
-@media (max-width: 450px) {
+@media (max-width: 500px) {
   h1.F-Title {
     font-size: 40px;
   }
@@ -178,7 +178,7 @@ h3.F-SubTitle {
   }
 
   .FeatureContainer {
-    height: 170vh; /* Adjusted height */
+    height: 200vh; /* Adjusted height */
   }
 
   img.last-torn-feat {
