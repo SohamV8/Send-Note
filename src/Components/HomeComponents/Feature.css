@@ -121,6 +121,7 @@ h3.F-SubTitle {
   width: 80%;
   height: auto;
   margin: 20px auto;
+  z-index: 100;
 }
 
 .TEXT-FEAT {
@@ -162,7 +163,39 @@ h3.F-SubTitle {
     margin-bottom: -50px;
   }
   .sparkles-container{
-    margin-top: 110px;
+    margin-top: 90px;
+  }
+
+}
+
+@media (min-width: 768px)and (max-width: 1300px) {
+  h1.F-Title {
+    font-size: 48px;
+  }
+
+  h3.F-SubTitle {
+    font-size: 30px;
+  }
+
+  .FeatureContainer {
+    height: 170vh; /* Adjusted height */
+  }
+
+  img.last-torn-feat {
+    margin-top: -10px;
+  }
+
+  .Feat-img {
+    width: 95%;
+    height: auto;
+  }
+
+  .FeatureContainer {
+    margin-top: 160px;
+    margin-bottom: -50px;
+  }
+  .sparkles-container{
+    margin-top: 50px;
   }
 
 }
