@@ -227,6 +227,8 @@ button.learn-more:active {
 @media (max-width: 768px) {
   .pyqtest {
     flex-direction: column;
+    height: 70vh;
+    margin-top: 35px;
   }
 
   .left-pyq {
@@ -262,7 +264,7 @@ button.learn-more:active {
     font-size: 4vmin;
     width: 90%;
     height: auto;
-    transform: rotate(0deg) translate(0%, 0%);
+    transform: rotate(2deg) translate(0%, 0%);
   }
 
   h2.tryNot {
