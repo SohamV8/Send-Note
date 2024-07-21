@@ -1,6 +1,6 @@
 <h1>Send Note</h1>
 You can see this website on : https://send-note.vercel.app/
-<hr><br>
+<hr>
 <h3>This project is designed to revolutionize the way students access and share academic materials.</h3>
 
 <ul>
@@ -12,5 +12,18 @@ You can see this website on : https://send-note.vercel.app/
 <li>Previous Year Question Papers: Access all previous year question papers to gain clarity and practice effectively. These papers come with detailed solutions and expert insights.</li>
 <li>AI-Integrated System: Resolve your doubts in seconds with our powerful integrated ChatGPT AI, capable of answering complex questions with ease.</li>
 <li>LMS Integration: Login to the LMS to check your attendance, grades, timetable, and much more, all in one place.</li>
-
 <ul>
+
+<img src="./src/assets/feature.png">
+
+<h3>Home Screen :</h3>
+<img src="./src/assets/Home_ss.png">
+
+<h3>Responsive Design :</h3>
+<img src="./src/assets/res_ss.png">
+
+<h3>Notes :</h3>
+<img src="./src/assets/Notes_ss.png">
+
+<h3>Doubts :</h3>
+<img src="./src/assets/doubts_ss.png">
