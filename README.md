@@ -3,16 +3,16 @@ You can see this website on : https://send-note.vercel.app/
 <hr>
 <h3>This project is designed to revolutionize the way students access and share academic materials.</h3>
 
-<ul>
-<li>Handwritten Notes from Toppers: Access the best notes from top performers in your college, meticulously organized and ready for your use.</li>
-<li>Tailored Syllabus Notes: Get the best handpicked notes specifically tailored to your syllabus, ensuring you study what truly matters.</li>
-<li>Responsive Design: Open notes on any screen, whether you're using a phone, tablet, or computer, for a seamless learning experience.</li>
-<li>Wide Range of Notes: Browse through an extensive collection of notes, organized by year and subject for your convenience.</li>
-<li>Detailed Subject-Wise Notes: Dive deep into detailed notes for each subject, making sure you understand every topic thoroughly.</li>
-<li>Previous Year Question Papers: Access all previous year question papers to gain clarity and practice effectively. These papers come with detailed solutions and expert insights.</li>
-<li>AI-Integrated System: Resolve your doubts in seconds with our powerful integrated ChatGPT AI, capable of answering complex questions with ease.</li>
-<li>LMS Integration: Login to the LMS to check your attendance, grades, timetable, and much more, all in one place.</li>
-<ul>
+ <ul>
+        <li><strong>Handwritten Notes from Toppers</strong>: Gain access to the best notes from top performers in your college, meticulously organized for your convenience.</li>
+        <li><strong>Tailored Syllabus Notes</strong>: Study what truly matters with handpicked notes specifically tailored to your syllabus.</li>
+        <li><strong>Responsive Design</strong>: Enjoy a seamless learning experience with notes accessible on any device—be it a phone, tablet, or computer.</li>
+        <li><strong>Extensive Note Collection</strong>: Browse through a comprehensive range of notes, organized by year and subject.</li>
+        <li><strong>Detailed Subject-Wise Notes</strong>: Delve deep into detailed notes for each subject, ensuring a thorough understanding of every topic.</li>
+        <li><strong>Previous Year Question Papers</strong>: Enhance your preparation with access to all previous year question papers, complete with detailed solutions and expert insights.</li>
+        <li><strong>AI-Integrated System</strong>: Resolve your doubts in seconds with our powerful integrated ChatGPT AI, capable of answering complex questions with ease.</li>
+        <li><strong>LMS Integration</strong>: Easily check your attendance, grades, timetable, and more by logging into our Learning Management System (LMS).</li>
+    </ul>
 
 <img src="./src/assets/feature.png">
 
