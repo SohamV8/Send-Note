@@ -15,17 +15,4 @@ You can visit this website on : https://send-note.vercel.app/
     </ul>
     <br>
 
-<img src="./src/assets/feature.png">
-<br>
-<h3>Home Screen :</h3>
-<img src="./src/assets/Home_ss.png">
-<br>
-<h3>Responsive Design :</h3>
-<img src="./src/assets/res_ss.png">
-<br>
-<h3>Notes :</h3>
-<img src="./src/assets/Notes_ss.png">
-<br>
-<h3>Doubts :</h3>
-<img src="./src/assets/doubts_ss.png">
-<br>
+<img src="./src/assets/Projects.jpg">
