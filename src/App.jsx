@@ -7,6 +7,7 @@ import Doubt from './Pages/Doubt';
 import PYQ from './Pages/PYQ';
 import './App.css';
 import 'font-awesome/css/font-awesome.min.css';
+import Contribute from './Pages/Contribute';
 
 
 function App() {
@@ -25,6 +26,9 @@ function App() {
             </Route>
             <Route path="/PYQ">
               <PYQ />
+            </Route>
+            <Route path="/Contribute">
+              <Contribute />
             </Route>
             <Route path="/">
               <Home />
