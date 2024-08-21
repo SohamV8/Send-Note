@@ -1,62 +1,161 @@
-.instructions {
+/* Container for instructions and background elements */
+.instruction-wrapper {
+    position: relative;
     padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Instructions container */
+.instructions {
     text-align: center;
-    background-color: #f0f8ff;
     border-radius: 12px;
     margin: 20px auto;
     max-width: 900px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .instructions h2 {
+    background: rgba(99, 174, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4.5px);
+    -webkit-backdrop-filter: blur(4.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    z-index: 10;
+    padding: 40px;
+}
+
+/* Heading styling */
+.instructions h2 {
     margin-bottom: 20px;
     font-size: 2em;
-    color: #333;
-  }
-  
-  .instruction-card {
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 20px 0;
+    color: #ffffff;
+}
+
+/* Instruction card styling */
+.instruction-card {
     display: flex;
     align-items: center;
     text-align: left;
-  }
-  
-  .instruction-icon {
+    background: rgba(78, 164, 255, 0.35);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4.5px);
+    -webkit-backdrop-filter: blur(4.5px);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 20px;
+    margin: 20px 0;
+    z-index: 10;
+}
+
+/* Instruction icon styling */
+.instruction-icon {
     font-size: 2em;
     margin-right: 15px;
-    color: #4a90e2;
-  }
-  
-  .instruction-card h3 {
+    color: #ffffff;
+}
+
+/* Text content styling within instruction card */
+.instruction-text h3 {
     margin: 0 0 10px 0;
     font-size: 1.5em;
-    color: #333;
-  }
-  
-  .instruction-card p {
+    color: #f0f0f0;
+}
+
+.instruction-text p {
     margin: 0;
     font-size: 1em;
-    color: #666;
-  }
-  
-  @media (max-width: 768px) {
+    color: #d6d6d6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
     .instructions {
         padding: 20px;
-        position: relative;
-        top: 90px;
         max-width: 350px;
     }
   
     .instruction-card {
-      flex-direction: column;
-      align-items: center;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
   
     .instruction-icon {
-      margin-bottom: 10px;
+        margin-bottom: 10px;
     }
-  }
+}
+
+/* Floating balls styling */
+.balls {
+    position: relative;
+    transform: translate(50%, -50%);
+    z-index: 0;
+}
+
+.ball {
+    position: absolute;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    animation: floatAnimation 2s ease-in-out infinite alternate;
+}
+
+/* Float animation */
+@keyframes floatAnimation {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        transform: translate(-50%, -50%) translateY(-20px);
+    }
+}
+
+/* Ball styling and positions */
+.ball1 {
+    top: -190px;
+    left: 130px;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(90deg, #0084ff, #0ff);
+}
+
+.ball2 {
+    bottom: 50px;
+    left: 400px;
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(90deg, #00ffd9, #00ff84);
+}
+
+.ball3 {
+    bottom: 250px;
+    right: 280px;
+    width: 140px;
+    height: 140px;
+    background: linear-gradient(90deg, #a200ff, #000dff);
+}
+
+@media (max-width: 768px) {
+    .ball1 {
+        top: -500px;
+        left: 90px;
+        width: 70px;
+        height: 70px;
+    }
+
+    .ball2 {
+        bottom: 240px;
+        left: -100px;
+        width: 55px;
+        height: 55px;
+    }
+
+
+    .ball3 {
+        bottom: -65px;
+        right: 50px;
+        width: 90px;
+        height: 90px;
+    }
+
+} 

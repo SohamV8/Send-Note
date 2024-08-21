@@ -5,8 +5,8 @@ import Instruction from '../Components/Instruction'
 function Contribute() {
   return (
     <div>
+      <Form />     
       <Instruction />
-      <Form />
     </div>
   )
 }
