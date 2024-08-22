@@ -1,0 +1,104 @@
+.sidebar {
+  margin-top: 140px;
+  width: 240px;
+  height: 100%;
+  background-color:  #0b1020;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow-y: auto;
+  transition: width 0.3s ease-in-out;
+  z-index: 10;
+}
+
+/* Styling for menu items and submenus */
+.sidebar-nav {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-nav li {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Line below each item */
+}
+
+.sidebar-nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-nav ul li {
+  font-family: 'Poppins', sans-serif;
+  font-weight: lighter; /* Light font for submenu items */
+  background-color: #141b30; /* Background color for submenus */
+}
+
+.sidebar-nav li a {
+  color: #aeb2b7;
+  text-decoration: none;
+  display: block;
+  padding: 18px 25px; /* Adjust padding as needed */
+  font-size: 16px;
+  position: relative;
+}
+
+.sidebar-nav li a:hover {
+  color: #FFDB58; /* Hover color */
+}
+  
+.sidebar-nav li a i {
+  width: 8px; /* Smaller arrow width */
+  height: 8px; /* Smaller arrow height */
+  display: inline-block;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%) rotate(315deg); /* Initial rotation for arrow */
+  border-left: 2px solid #fff; /* White arrow border */
+  border-bottom: 2px solid #fff; /* White arrow border */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Arrow icon styles */
+.arrow.down {
+  transform: translateY(-50%) rotate(225deg); /* Rotate arrow for down state */
+}
+
+/* Expanded submenu */
+.submenu.expanded {
+  display: block;
+}
+
+.submenu {
+  display: none;
+}
+
+/* Media query for responsive design */
+@media (max-width: 450px) {
+  .sidebar {
+    width: 130px; 
+    margin-left: -6px;
+  }
+  .sidebar.toggled {
+    width: 240px; /* Expanded sidebar width when toggled */
+  }
+
+  .sidebar.toggled .sidebar-nav ul {
+    display: none; /* Hide submenus when collapsed */
+  }
+}
+
+@media (min-width:500px) and (max-width: 768px) {
+  .sidebar {
+    width: 145px; /* Collapse sidebar width on smaller screens */
+  }
+  .sidebar.toggled {
+    width: 240px; /* Expanded sidebar width when toggled */
+  }
+  .sidebar.toggled .sidebar-nav ul {
+    display: none; /* Hide submenus when collapsed */
+  }
+}
