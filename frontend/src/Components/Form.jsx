@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Form.css";
+import { useGlobalContext } from "../context/GlobalContextProvider";
 
 function Form() {
   const [formData, setFormData] = useState({
@@ -27,23 +28,28 @@ function Form() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const formData = new FormData();
-    formData.append("email", formData.email);
-    formData.append("subject", formData.subject);
-    formData.append("year", formData.year);
+    // Create new FormData object and append form data
+    const form = new FormData();
+    form.append("email", formData.email);
+    form.append("subject", formData.subject);
+    form.append("year", formData.year);
     if (formData.file) {
-      formData.append("file", formData.file);
+      form.append("file", formData.file);
     }
 
     try {
-      const response = await fetch("/api/upload", {
+      const response = await fetch(`${globalBackendUrl}/api/upload`, {
         method: "POST",
-        body: formData,
+        body: form,
       });
+
+      // Check if response is OK
+      if (!response.ok) {
+        throw new Error(`Error: ${response.statusText}`);
+      }
 
       const data = await response.json();
       console.log("Form submitted:", data);
-      // Handle further form submission or success message
     } catch (error) {
       console.error("Error submitting form:", error);
     }
