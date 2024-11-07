@@ -27,7 +27,7 @@ function Header() {
           <Link to="/Contribute" onClick={() => setMenuOpen(false)}>CONTRIBUTE</Link>
         </nav>
         <a
-          href="https://academics.ncuindia.edu/"
+          href="https://mycampus.ncuindia.edu/"
           target="_blank"
           rel="noopener noreferrer"
           className="acc-link"

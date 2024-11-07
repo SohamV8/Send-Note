@@ -24,7 +24,11 @@ function Doubt() {
 
       try {
         const chatResponse = await chatWithGPT(userMessage);
-        displayMessage('ChatGPT', chatResponse);
+       
+          console.log("Chat ",chatResponse);
+          displayMessage('ChatGPT', chatResponse);
+        
+        
       } catch (error) {
         console.error('Error in chatWithGPT:', error);
         displayMessage('ChatGPT', 'Sorry, there was an error processing your request.');
@@ -35,27 +39,37 @@ function Doubt() {
   }
 
   async function chatWithGPT(prompt) {
+    
     try {
-      const response = await axios.post(
-        'https://api.openai.com/v1/engines/davinci-codex/completions',
-        {
-          prompt: prompt,
-          max_tokens: 150,
-        },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer YOUR_OPENAI_API_KEY', // Replace with your actual OpenAI API key
-          },
-        }
-      );
-
-      return response.data.choices[0].text.trim();
+      const response = await axios.post("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyAQK2Lz942PeArg70JE43pCTu8SayCqVvw",{"contents":[{"parts":[{"text":`${prompt}`}]}]});
+      // const response = await axios.post(
+      //   'https://generativelanguage.googleapis.com/v1beta2/models/text-bison-001:generateText', // Use the correct endpoint for Google AI Studio
+      //   {
+      //     prompt: { text: prompt },
+      //     maxOutputTokens: 150, // Adjust tokens as needed
+      //   },
+      //   {
+      //     headers: {
+      //       'Content-Type': 'application/json',
+      //       'Authorization': `Bearer ${'AIzaSyAQK2Lz942PeArg70JE43pCTu8SayCqVvw'}`, // Include your Google API key
+      //     },
+      //   }
+  
+      // setChatMessages(response.data.candidates[0]?.output);
+      console.log(response);
+      console.log( response.data.candidates[0]?.content.parts[0].text);
+      
+        return response.data.candidates[0]?.content.parts[0].text ; // Adjust this path based on the response structure
+      
+      
+  
+      // return response.data.candidates[0]?.output || 'No response generated'; // Adjust this path based on the response structure
     } catch (error) {
       console.error('Error in chatWithGPT:', error);
       throw error;
     }
   }
+  
 
   function displayMessage(sender, message) {
     setChatMessages((prevMessages) => [...prevMessages, { sender, message }]);
