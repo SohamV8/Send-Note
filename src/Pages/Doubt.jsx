@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import './doubt.css';
 import sendIcon from '../assets/send.png';
 
@@ -10,7 +12,7 @@ function Doubt() {
   useEffect(() => {
     // Initial chat greeting after 2 seconds
     const initialGreeting = setTimeout(() => {
-      displayMessage('ChatGPT', 'Hello! How can I help you today?');
+      displayMessage('AI', 'Hello! How can I help you today?');
     }, 2000);
 
     return () => clearTimeout(initialGreeting);
@@ -20,18 +22,18 @@ function Doubt() {
     const userMessage = userInput.trim();
 
     if (userMessage !== '') {
-      displayMessage('You', userMessage);
+      displayMessage('You ', userMessage);
 
       try {
         const chatResponse = await chatWithGPT(userMessage);
        
           console.log("Chat ",chatResponse);
-          displayMessage('ChatGPT', chatResponse);
+          displayMessage('AI ', chatResponse);
         
         
       } catch (error) {
         console.error('Error in chatWithGPT:', error);
-        displayMessage('ChatGPT', 'Sorry, there was an error processing your request.');
+        displayMessage('AI ', 'Sorry, there was an error processing your request.');
       }
 
       setUserInput('');
@@ -86,7 +88,8 @@ function Doubt() {
       <div className="chat-messages" id="chat-messages">
         {chatMessages.map((message, index) => (
           <div key={index} className="chat-message">
-            {`${message.sender}: ${message.message}`}
+            <strong>{message.sender}:</strong>
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>{message.message}</ReactMarkdown>
           </div>
         ))}
       </div>
