@@ -8,6 +8,7 @@ import PYQ from './Pages/PYQ';
 import './App.css';
 import 'font-awesome/css/font-awesome.min.css';
 import Contribute from './Pages/Contribute';
+import ARVR from './Pages/ARVR';
 
 
 function App() {
@@ -29,6 +30,9 @@ function App() {
             </Route>
             <Route path="/Contribute">
               <Contribute />
+            </Route>
+            <Route path="/ARVR">
+              <ARVR />
             </Route>
             <Route path="/">
               <Home />

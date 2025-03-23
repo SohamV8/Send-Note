@@ -25,6 +25,7 @@ function Header() {
           <Link to="/Doubt" onClick={() => setMenuOpen(false)}>DOUBT</Link>
           <Link to="/PYQ" onClick={() => setMenuOpen(false)}>PYQ</Link>
           <Link to="/Contribute" onClick={() => setMenuOpen(false)}>CONTRIBUTE</Link>
+          <Link to="/ARVR" onClick={() => setMenuOpen(false)}>AR/VR</Link>
         </nav>
         <a
           href="https://mycampus.ncuindia.edu/"
