@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from './Components/Header';
 import Home from './Pages/Home';
 import Notes from './Pages/Notes';
@@ -24,7 +24,7 @@ function App() {
     script.async = true;
     document.head.appendChild(script);
 
-    // Initialize GA once script loads
+    // Initialize GA
     script.onload = () => {
       gtag('js', new Date());
       gtag('config', 'G-6LYGS9Q14T', {
@@ -36,9 +36,9 @@ function App() {
     return () => {
       document.head.removeChild(script);
     };
-  }, []); // Runs only on mount
+  }, []);
 
-  // Track route changes manually with a custom listener
+  // Track route changes with popstate
   useEffect(() => {
     const handleRouteChange = () => {
       if (typeof gtag === 'function') {
@@ -48,10 +48,8 @@ function App() {
       }
     };
 
-    // Listen to history changes (popstate for browser back/forward)
     window.addEventListener('popstate', handleRouteChange);
 
-    // Since Router doesn't expose a direct event, we rely on this workaround
     return () => {
       window.removeEventListener('popstate', handleRouteChange);
     };
@@ -60,14 +58,26 @@ function App() {
   return (
     <Router>
       <Header />
-      <Routes>
-        <Route path="/notes" element={<Notes />} />
-        <Route path="/doubt" element={<Doubt />} />
-        <Route path="/pyq" element={<PYQ />} />
-        <Route path="/contribute" element={<Contribute />} />
-        <Route path="/arvr" element={<ARVR />} />
-        <Route path="/" element={<Home />} />
-      </Routes>
+      <Switch>
+        <Route path="/notes">
+          <Notes />
+        </Route>
+        <Route path="/doubt">
+          <Doubt />
+        </Route>
+        <Route path="/pyq">
+          <PYQ />
+        </Route>
+        <Route path="/contribute">
+          <Contribute />
+        </Route>
+        <Route path="/arvr">
+          <ARVR />
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
     </Router>
   );
 }
