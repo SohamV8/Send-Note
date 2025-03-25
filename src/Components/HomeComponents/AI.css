@@ -3,15 +3,19 @@
   height: 100vh;
   position: relative;
   background: #000;
-  display: contents;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
 }
 
 img.torn {
   width: 100%;
   height: auto;
-  z-index: 1;
   position: absolute;
-  margin-top: -80px;
+  top: -50px;
+  left: 0;
+  z-index: 100;
 }
 
 /* Container styling */
@@ -22,28 +26,28 @@ img.torn {
   justify-content: center;
   align-items: center;
   text-align: center;
-  overflow: hidden;
-  position: absolute;
+  position: relative;
   width: 100%;
-  margin-top: 150px;
+  margin-top: 100px;
 }
 
 /* H1 styling */
 .hyperplexed-container h1 {
   font-family: 'Space Mono', monospace;
-  font-size: clamp(3rem, 10vw, 10rem); /* Default size */
+  font-size: clamp(3rem, 10vw, 10rem);
   color: white;
   padding: 0 clamp(1rem, 2vw, 3rem);
   border-radius: clamp(0.4rem, 0.75vw, 1rem);
   transition: background-color 0.3s, color 0.3s;
+  margin: 0.5rem 0;
 }
 
 .hyperplexed-container h1:first-of-type {
-  font-size: clamp(2.5rem, 10vw, 15rem); /* Larger size for the first heading */
+  font-size: clamp(2.5rem, 10vw, 15rem);
 }
 
 .hyperplexed-container h1:last-of-type {
-  font-size: clamp(2rem, 6vw, 3.5rem); /* Smaller size for the second heading */
+  font-size: clamp(2rem, 6vw, 3.5rem);
 }
 
 .hyperplexed-container h1:hover {
@@ -51,37 +55,15 @@ img.torn {
   color: black;
 }
 
-/* AIButton.css */
-:root {
-  --size-default: 22px;
-  --size-sm: 16px;
-  --color-green: #58DD93;
-  --color-black: #000;
-}
-
-@property --angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
-
-@property --glowColor {
-  syntax: "<color>";
-  initial-value: var(--color-green);
-}
-
-@keyframes rotate {
-  0% { --angle: 0deg; --glowColor: var(--color-green);}
-  100% { --angle: 360deg; --glowColor: var(--color-green);}
-}
-
+/* Button styling */
 .containerbtn {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 16px;
-  margin-top: -200px;
+  position: relative;
   z-index: 1000;
+  margin-top: auto; /* Pushes button to bottom */
 }
 
 .btnAI {
@@ -99,7 +81,8 @@ img.torn {
   transform: translate3d(0, 0, 0);
 }
 
-.btnAI:after, .btnAI:before {
+.btnAI:after,
+.btnAI:before {
   content: "";
   display: block;
   position: absolute;
@@ -111,12 +94,12 @@ img.torn {
   background-size: 100% 100%;
   background-position: 0px 0px;
   background-image: conic-gradient(
-    from var(--angle) at 50% 50%, 
-    rgba(0,0,0,0) 0%,
-    rgba(0,0,0,0) 33%,
+    from var(--angle) at 50% 50%,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 33%,
     var(--glowColor) 50%,
-    rgba(0,0,0,0) 66%,
-    rgba(0,0,0,0) 100%
+    rgba(0, 0, 0, 0) 66%,
+    rgba(0, 0, 0, 0) 100%
   );
   animation: rotate 2s infinite linear;
 }
@@ -134,7 +117,7 @@ img.torn {
   border-radius: 100px;
   color: var(--color-green);
   font-weight: 500;
-  font-size: 28px; /* Updated font size in pixels */
+  font-size: 28px;
   z-index: 1;
   transition: all 0.18s ease;
   background: rgba(0, 0, 0, 0.3);
@@ -162,7 +145,7 @@ img.torn {
   }
 
   .containerbtn {
-    margin-top: -150px;
+    margin-top: auto;
   }
 
   .btnInner {
@@ -171,11 +154,6 @@ img.torn {
 }
 
 @media (min-width: 480px) and (max-width: 768px) {
-
-  .AIBack {
-    margin-top: -0px;
-  }
-
   .hyperplexed-container h1:first-of-type {
     font-size: 3rem;
   }
@@ -185,20 +163,15 @@ img.torn {
   }
 
   .containerbtn {
-    margin-top: -100px;
+    margin-top: auto;
   }
 
-  img.torn{
-    margin-top: -30px;
+  img.torn {
+    top: -30px;
   }
 }
 
 @media (max-width: 480px) {
-
-  .AIBack {
-    margin-top: 0px;
-  }
-
   .hyperplexed-container h1:first-of-type {
     font-size: 4rem;
   }
@@ -208,10 +181,40 @@ img.torn {
   }
 
   .containerbtn {
-    margin-top: -200px;
+    margin-top: auto;
   }
 
-  img.torn{
-    margin-top: -20px;
+  img.torn {
+    top: -20px;
+  }
+}
+
+/* CSS Variables */
+:root {
+  --size-default: 22px;
+  --size-sm: 16px;
+  --color-green: #58dd93;
+  --color-black: #000;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@property --glowColor {
+  syntax: "<color>";
+  initial-value: var(--color-green);
+}
+
+@keyframes rotate {
+  0% {
+    --angle: 0deg;
+    --glowColor: var(--color-green);
+  }
+  100% {
+    --angle: 360deg;
+    --glowColor: var(--color-green);
   }
 }
