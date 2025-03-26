@@ -36,7 +36,7 @@ const TryNote = () => {
     <img
   src={torntry}
   alt="torn effect"
-  className="flex w-full h-auto object-cover"
+  className="absolute z-50 flex w-full h-auto object-cover"
   style={{ marginTop: '-70px' }}
 />
     </>
