@@ -8,6 +8,7 @@ function Feature() {
   return (
     <div className="FeatureContainer">
       <img src={tornlast} alt="torn paper" className="last-torn-feat" />
+      <div className="featmain">
       <div className="SparklesPreview">
         <h1 className="F-Title glitch" data-text="WE GOT EVERYTHING COVER FOR YOU">
           WE GOT EVERYTHING COVER FOR YOU
@@ -29,6 +30,7 @@ function Feature() {
       </div>
       <div className="Feat">
         <img src={feature} alt="feature" className="Feat-img" />
+      </div>
       </div>
     </div>
   );

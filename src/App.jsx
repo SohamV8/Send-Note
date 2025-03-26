@@ -34,6 +34,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/app" element={<Home />} />
         <Route path="/notes" element={<Notes />} />
         <Route path="/doubt" element={<Doubt />} />
         <Route path="/pyq" element={<PYQ />} />

@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './try.css';
+import torntry from '../../assets/torntry.png';
 
 const TryNote = () => {
   return (
+    <>
     <div className="pyqtest">
       <div className="left-pyq">
         <article className="how-to-stay-on-top">
@@ -31,6 +33,13 @@ const TryNote = () => {
         </Link>
       </div>
     </div>
+    <img
+  src={torntry}
+  alt="torn effect"
+  className="flex w-full h-auto object-cover"
+  style={{ marginTop: '-70px' }}
+/>
+    </>
   );
 };
 

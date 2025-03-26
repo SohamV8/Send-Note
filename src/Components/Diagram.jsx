@@ -78,7 +78,7 @@ function Diagram() {
 
   const ThumbnailCard = ({ diagram }) => (
     <div
-      className=" relative bg-gradient-to-br from-gray-800/90 to-gray-900/90 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer transform hover:-translate-y-2 backdrop-blur-sm border border-gray-700/50"
+      className="relative bg-gradient-to-br from-gray-800/90 to-gray-900/90 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer transform hover:-translate-y-2 backdrop-blur-sm border border-gray-700/50 flex-1 basis-[calc(25%-1.5rem)] max-w-[300px]"
       onClick={() => handleSelectDiagram(diagram)}
     >
       <div className="relative h-48 overflow-hidden">
@@ -100,7 +100,7 @@ function Diagram() {
   return (
     <div className="min-h-screen text-white flex flex-col items-center justify-center">
       {/* Header */}
-      <header className=" py-6 px-6 md:px-12">
+      <header className="py-6 px-6">
         <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
           <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white drop-shadow-lg">
             3D Engineering Diagrams
@@ -110,84 +110,82 @@ function Diagram() {
           </p>
         </div>
       </header>
-
+<br></br><br></br>
       {/* Main Content */}
-      <main className="flex-1 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-        <div className="w-full max-w-7xl">
-          {selectedDiagram ? (
-            <div
-              className={`relative transition-all duration-500 ease-in-out ${
-                isFullscreen
-                  ? 'fixed inset-0 z-50'
-                  : 'w-[90vw] h-[90vh] mx-auto rounded-3xl shadow-2xl border border-gray-700/50'
-              }`}
-            >
-              {/* Fullscreen and Close Buttons */}
-              <div className="absolute top-4 right-4 z-30 flex gap-4">
-                <button
-                  onClick={toggleFullscreen}
-                  className="bg-gray-800/80 p-3 rounded-full hover:bg-gray-700/80 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50 backdrop-blur-sm border border-gray-600/50"
-                  aria-label={isFullscreen ? 'Exit fullscreen' : 'Enter fullscreen'}
+      <main className="flex-1 w-full max-w-7xl px-4 py-12">
+        {selectedDiagram ? (
+          <div
+            className={`relative transition-all duration-500 ease-in-out ${
+              isFullscreen
+                ? 'fixed inset-0 z-50'
+                : 'w-[90vw] h-[90vh] mx-auto rounded-3xl shadow-2xl border border-gray-700/50'
+            }`}
+          >
+            {/* Fullscreen and Close Buttons */}
+            <div className="absolute top-4 right-4 z-30 flex gap-4">
+              <button
+                onClick={toggleFullscreen}
+                className="bg-gray-800/80 p-3 rounded-full hover:bg-gray-700/80 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50 backdrop-blur-sm border border-gray-600/50"
+                aria-label={isFullscreen ? 'Exit fullscreen' : 'Enter fullscreen'}
+              >
+                {isFullscreen ? <Minimize2 size={20} /> : <Maximize2 size={20} />}
+              </button>
+              <button
+                onClick={handleCloseViewer}
+                className="bg-red-800/80 p-3 rounded-full hover:bg-red-700/80 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-red-500/50 backdrop-blur-sm border border-gray-600/50"
+                aria-label="Close viewer"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
-                  {isFullscreen ? <Minimize2 size={20} /> : <Maximize2 size={20} />}
-                </button>
-                <button
-                  onClick={handleCloseViewer}
-                  className="bg-red-800/80 p-3 rounded-full hover:bg-red-700/80 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-red-500/50 backdrop-blur-sm border border-gray-600/50"
-                  aria-label="Close viewer"
-                >
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                  </svg>
-                </button>
-              </div>
-
-              {/* Diagram Viewer */}
-              <DiagramDisplay ref={viewerRef} diagram={selectedDiagram} />
-
-              {/* Zoom and Rotation Controls */}
-              <div className="absolute bottom-4 right-4 z-30 bg-gray-800/80 p-3 rounded-lg flex gap-3 backdrop-blur-sm border border-gray-600/50">
-                <button
-                  onClick={handleZoomIn}
-                  className="p-2 rounded-full bg-gray-700/80 hover:bg-gray-600/80 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
-                  aria-label="Zoom in"
-                >
-                  <ZoomIn size={20} />
-                </button>
-                <button
-                  onClick={handleZoomOut}
-                  className="p-2 rounded-full bg-gray-700/80 hover:bg-gray-600/80 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
-                  aria-label="Zoom out"
-                >
-                  <ZoomOut size={20} />
-                </button>
-                <button
-                  onClick={handleResetRotation}
-                  className="p-2 rounded-full bg-gray-700/80 hover:bg-gray-600/80 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
-                  aria-label="Reset rotation"
-                >
-                  <RotateCcw size={20} />
-                </button>
-              </div>
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+              </button>
             </div>
-          ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
-              {diagrams.map((diagram) => (
-                <ThumbnailCard key={diagram.id} diagram={diagram} />
-              ))}
+
+            {/* Diagram Viewer */}
+            <DiagramDisplay ref={viewerRef} diagram={selectedDiagram} />
+
+            {/* Zoom and Rotation Controls */}
+            <div className="absolute bottom-4 right-4 z-30 bg-gray-800/80 p-3 rounded-lg flex gap-3 backdrop-blur-sm border border-gray-600/50">
+              <button
+                onClick={handleZoomIn}
+                className="p-2 rounded-full bg-gray-700/80 hover:bg-gray-600/80 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+                aria-label="Zoom in"
+              >
+                <ZoomIn size={20} />
+              </button>
+              <button
+                onClick={handleZoomOut}
+                className="p-2 rounded-full bg-gray-700/80 hover:bg-gray-600/80 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+                aria-label="Zoom out"
+              >
+                <ZoomOut size={20} />
+              </button>
+              <button
+                onClick={handleResetRotation}
+                className="p-2 rounded-full bg-gray-700/80 hover:bg-gray-600/80 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+                aria-label="Reset rotation"
+              >
+                <RotateCcw size={20} />
+              </button>
             </div>
-          )}
-        </div>
+          </div>
+        ) : (
+          <div className="flex flex-wrap justify-center gap-6">
+            {diagrams.map((diagram) => (
+              <ThumbnailCard key={diagram.id} diagram={diagram} />
+            ))}
+          </div>
+        )}
       </main>
     </div>
   );
