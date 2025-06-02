@@ -8,7 +8,7 @@ import {
 } from "@tabler/icons-react";
 
 import workshop from "../../assets/workshop.jpg";
-import Community from "../../assets/Community.jpg";
+import Community from "../../assets/community.jpg";
 import Group from "../../assets/Group.jpg";
 import Campus from "../../assets/Campus.jpg";
 
