@@ -1,0 +1,122 @@
+.chat-container {
+  margin-left: 30px;
+  margin-bottom: 10px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.chat-messages {
+  height: 500px;
+  overflow-y: auto; /* Updated to auto to prevent clipping */
+  padding: 10px;
+  border-top: 2px solid #ccc;
+}
+
+.chat-message {
+  margin-bottom: 10px;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #1a1a1a; /* Darker shade for better contrast */
+  color: #f5deb3;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.chat-message strong {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 4px;
+  color: #f0e68c;
+}
+
+.chat-message p {
+  margin: 8px 0;
+}
+
+.chat-message ul,
+.chat-message ol {
+  margin: 8px 0;
+  padding-left: 1.5em;
+}
+
+.chat-message li {
+  margin-bottom: 4px;
+}
+
+.chat-input {
+  width: calc(100% - 150px);
+  padding: 10px;
+  box-sizing: border-box;
+  color: #f5deb3;
+  border: 2px solid #ccc;
+  background-color: transparent;
+  border-radius: 15px;
+  font-family: 'Victor Mono', monospace; /* Fixed font case */
+  font-weight: 700;
+}
+
+.send-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 6px;
+}
+
+.senddoubt {
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 430px) {
+  .chat-input {
+    width: calc(100% - 100px);
+  }
+  .senddoubt {
+    width: 40px;
+  }
+}
+
+/* Added markdown styling */
+.chat-message h1,
+.chat-message h2,
+.chat-message h3,
+.chat-message h4,
+.chat-message h5,
+.chat-message h6 {
+  color: #e6e6e6;
+  margin-top: 8px;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.chat-message blockquote {
+  border-left: 4px solid #ccc;
+  padding-left: 10px;
+  margin: 10px 0;
+  color: #f5deb3;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.chat-message code {
+  background-color: #333;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Victor Mono', monospace;
+}
+
+.chat-message pre {
+  background-color: #333;
+  padding: 10px;
+  border-radius: 6px;
+  margin-top: 8px;
+  color: #f5deb3;
+  overflow-x: auto;
+}

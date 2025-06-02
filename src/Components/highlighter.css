@@ -1,0 +1,56 @@
+.highlighter-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+  
+  mark {
+    position: relative;
+    display: inline-block;
+    background: none;
+    z-index: 10;
+    line-height: normal;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    color: rgba(0, 0, 0, 0.9);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  
+  svg.footer1 {
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    right: -10%;
+    bottom: -10%;
+    z-index: -1;
+    overflow: hidden;
+    margin: auto;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke-width: 54px;
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    transition: stroke-dashoffset 800ms ease-in-out;
+    will-change: stroke-dashoffset;
+    pointer-events: none;
+  }
+  
+  svg.footer1:first-of-type {
+    width: 105.5%;
+    height: 104%;
+    transform: skewX(-17deg);
+  }
+  
+  svg.footer1:last-of-type {
+    width: 104%;
+    transform: skewX(-12deg);
+  }
+  
+  mark:hover > svg {
+    stroke-dashoffset: 0;
+  }
+  
