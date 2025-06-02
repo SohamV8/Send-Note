@@ -32,7 +32,7 @@ function App() {
   }, []);
 
   return (
-    <Router basename="/Send-Note">
+    <Router>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
