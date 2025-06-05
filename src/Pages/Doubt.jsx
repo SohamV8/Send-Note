@@ -78,7 +78,7 @@ function Doubt() {
           </div>
         ))}
       </div>
-      <div className="input-container">
+      <div className="input-container flex">
         <input
           type="text"
           className="chat-input"
