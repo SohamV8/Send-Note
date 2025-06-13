@@ -1,4 +1,4 @@
-# 📚 Send Note – Redefining Academic Access for Students
+# 📚 Send Note
 
 🌐 **Live Website**: [send-note.vercel.app](https://send-note.vercel.app/)  
 📂 **GitHub Repo**: [github.com/SohamV8/Send-Note](https://github.com/SohamV8/Send-Note)  
@@ -111,4 +111,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 Feel free to fork this repository, open issues, or submit pull requests to help improve the platform.  
 Together, let’s build the future of academic excellence. 💡
-<img src="./src/assets/Projects.jpg">
+
